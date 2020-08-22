@@ -30,11 +30,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="w3_menu">
 							<div class="agileits_w3layouts_banner_info">
+							<div class="image-agileits">
+								<img src="img/f1.jpg" alt="" class="img-r">
+							</div>
 				
-								<form action="#" method="post"> 
-									<input type="search" name="search" placeholder=" " required="">
-									<input type="submit" value="Search">
-								</form>
 							</div>
 								<div class="top-nav">
 								<nav class="navbar navbar-default">
@@ -95,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="w3_agileits_social_media ">
 				<ul class="social-icons3">
 					<li class="agileinfo_share">Compartir</li>
-					<li><a href="https://www.facebook.com/amormioshopgt" class="wthree_facebook" target="_blank"> <i class="fa fa-facebook" aria-hidden="true" target="_blank"></i></a></li>
+					<li><a href="" class="wthree_facebook" target="_blank"> <i class="fa fa-facebook" aria-hidden="true" target="_blank"></i></a></li>
 					<li><a href="https://www.instagram.com/amormio.gt" class="wthree_dribbble" target="_blank"><i class="fa fa-instagram" aria-hidden="true" target="_blank"></i></a></li>
 				</ul>
 			</div>
@@ -138,9 +137,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 </div>
 <!-- //we-offer -->
-<div class="sale-w3ls">
-	<div class="container">
-		<div class="fb-page" data-href="https://www.facebook.com/Oficina-de-Servicios-Profesionales-de-Huehuetenango-1683778345038903/" data-tabs="timeline" data-width="500" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Oficina-de-Servicios-Profesionales-de-Huehuetenango-1683778345038903/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Oficina-de-Servicios-Profesionales-de-Huehuetenango-1683778345038903/">Oficina de Servicios Profesionales de Huehuetenango</a></blockquote></div>
+<div class="sale-w3ls" style= "height:300px">
+	<div class="container" >
 	</div>
 </div>
 <!-- team -->
@@ -168,10 +166,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<li><a href="https://www.instagram.com/amormio.gt" class="wthree_dribbble"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 									
 								</ul>
-							</div>	
-				<div class="image-agileits">
-				<img src="img/f1.jpg" alt="" class="img-r">
-				</div>
+							</div>
+							<br>
+							<div class="agile_footer_grid">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.096439546851!2d-91.47686768563277!3d15.316993289349494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858c142f00ce039b%3A0xa01b92d943f3cc2a!2sCentro%20Comercial%20El%20Tri%C3%A1ngulo!5e0!3m2!1ses!2sgt!4v1598130888709!5m2!1ses!2sgt" width="350" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+					</div>
+	
+
 				<div class="clearfix"> </div>
 				</div>
 				<div class="col-md-4 w3-agile-grid mid-w3-add">
@@ -212,24 +213,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 footer-right w3-agile-grid">
 					<div class="agile_footer_grid">
-					<h5>Ofertas</h5>
-						<ul class="agileits_w3layouts_footer_grid_list">
-							<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-								<a href="#" data-toggle="modal" data-target="#myModal1">Lorem ipsum neque vulputate </a>
-							</li>
-							<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-								<a href="#" data-toggle="modal" data-target="#myModal1">Dolor amet sed quam vitae</a>
-							</li>
-							<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-								<a href="#" data-toggle="modal" data-target="#myModal1">Lorem ipsum neque, vulputate </a>
-							</li>
-							<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-								<a href="#" data-toggle="modal" data-target="#myModal1">Dolor amet sed quam vitae</a>
-							</li>
-							<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-								<a href="#" data-toggle="modal" data-target="#myModal1">Lorem ipsum neque, vulputate </a>
-							</li>
-						</ul>
+						<div class="fb-page" data-href="https://www.facebook.com/amormioshopgt" data-tabs="timeline,events,messages" data-width="500" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/amormioshopgt" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/amormioshopgt">AMOR MIO SHOP</a></blockquote></div>
 					</div>
 					<h5>Suscribete</h5>
 					<form action="#" method="post">
