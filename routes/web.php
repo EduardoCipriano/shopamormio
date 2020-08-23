@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('buynow');
+    return view('index');
 });
 
 Route::resource('categoria', 'CategoriaController');
 Route::resource('producto', 'ProductoController');
+Route::get('/buynow', 'ProductoController@buynow')->name('buynow');
+
 

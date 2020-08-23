@@ -33,6 +33,20 @@ class ProductoController extends Controller
 
 
     }
+    public function buynow()
+    {
+        
+            $productos = Producto::join('categoria', 'producto.id_categoria', '=', 'categoria.id') 
+                            ->select('producto.*', 'categoria.nombre as categoria' )
+                            ->where('producto.condicion', '=', '1')
+                            ->orderBy('producto.nombre')
+                            ->paginate(10);
+                            //return view('producto.index');
+                           return view('catalogo', ["productos"=>$productos]);
+        
+
+
+    }
 
    
     public function store(Request $request)
