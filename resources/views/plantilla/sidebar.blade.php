@@ -25,11 +25,15 @@
                 {{csrf_field()}}
                 </form>
             </li>
-              
-    
+            
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i> Pedidos</a>
+                <a class="nav-link" href="{{url('pedido')}}" onclick="event.preventDefault(); document.getElementById('pedido-form').submit();"><i class="fa fa-shopping-cart"></i>Pedidos</a> 
+                <form id="pedido-form" action="{{url('pedido')}}" method="GET" style="display: none;">
+                {{csrf_field()}}
+                </form>
             </li>
+
+            
             
             <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fa fa-user"></i> Usuarios</a>
