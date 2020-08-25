@@ -42,7 +42,7 @@ class ProductoController extends Controller
                             ->orderBy('producto.nombre')
                             ->paginate(10);
                             //return view('producto.index');
-                           return view('catalogo', ["productos"=>$productos]);
+                           return view('mostrar.catalogo', ["productos"=>$productos]);
         
 
 
@@ -123,4 +123,6 @@ class ProductoController extends Controller
         }
         return Redirect::to("producto");
     }
+
+   
 }

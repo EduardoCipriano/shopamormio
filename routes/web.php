@@ -14,11 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('/mostrar/catalogo');
 });
+
+Route::get('contacto', function () {
+    return view('/mostrar/contacto');
+});
+
+Route::get('nosotros', function () {
+    return view('/mostrar/nosotros');
+});
+
 
 Route::resource('categoria', 'CategoriaController');
 Route::resource('producto', 'ProductoController');
 Route::get('/buynow', 'ProductoController@buynow')->name('buynow');
+
 
 

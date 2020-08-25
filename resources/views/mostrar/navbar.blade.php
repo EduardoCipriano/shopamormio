@@ -24,22 +24,35 @@
 											<li class="home-icon"><a href="index.html"><span class="fa fa-home fa-2x" aria-hidden="true"></span></a></li>
                                             
                                            
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{url('catalogo')}}" onclick="event.preventDefault(); document.getElementById('pedido-form').submit();"><i class="fa fa-shopping-cart"></i>Productos</a> 
-                                                <form id="catalogo-form" action="{{url('catalogo')}}" method="GET" style="display: none;">
-                                                {{csrf_field()}}
-                                                </form>
-                                            </li>
+                                            
+											<li class="nav-item">
+												<a class="nav-link" href="{{url('/')}}" onclick="event.preventDefault(); document.getElementById('/-form').submit();">Producto</a> 
+												<form id="/-form" action="{{url('/')}}" method="GET" style="display: none;">
+												{{csrf_field()}}
+												</form>
+											</li>
 
 											<li class="nav-cart-w3ls">
 												<form action="#" method="post" class="last"> 
 													<input type="hidden" name="cmd" value="_cart">
 													<input type="hidden" name="display" value="1">
-													<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down fa-2x" aria-hidden="true"></i></button>
+													<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down fa-1x" aria-hidden="true"></i></button>
 												</form> 
 											</li>
-											<li><a href="about.html">Nosotros</a></li>
-											<li><a href="contact.html">Contacto</a></li>
+											
+											<li class="nav-item">
+												<a class="nav-link" href="{{url('nosotros')}}" onclick="event.preventDefault(); document.getElementById('nosotros-form').submit();">Nosotros</a> 
+												<form id="nosotros-form" action="{{url('nosotros')}}" method="GET" style="display: none;">
+												{{csrf_field()}}
+												</form>
+											</li>
+											
+											<li class="nav-item">
+												<a class="nav-link" href="{{url('contacto')}}" onclick="event.preventDefault(); document.getElementById('contacto-form').submit();">Contacto</a> 
+												<form id="contacto-form" action="{{url('contacto')}}" method="GET" style="display: none;">
+												{{csrf_field()}}
+												</form>
+											</li>
 										</ul>	
 										<div class="clearfix"> </div>
 									</div>	
