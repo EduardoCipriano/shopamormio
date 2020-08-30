@@ -32,3 +32,7 @@ Route::get('/buynow', 'ProductoController@buynow')->name('buynow');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
