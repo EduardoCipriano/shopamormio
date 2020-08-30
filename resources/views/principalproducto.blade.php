@@ -38,6 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <p>Nuestras Redes Sociales</p>
                         <li><a href="https://www.facebook.com/amormioshopgt" class="wthree_facebook"> <i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="https://www.instagram.com/amormio.gt" class="wthree_dribbble"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=50254342422" class="wthree_behance" target="_blank"> <i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
                         <p>© 2020 Todos los derechos reservados | Creado por <a href="">Camaleón</a></p>
                     </ul>
                                
@@ -88,19 +89,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                   </script>
         <!-- //requried-jsfiles-for owl -->
 <!-- //for-Clients -->
-<!-- cart-js -->
-<script src="{{('js/minicart.min.js')}}"></script>
-<script>
-    // Mini Cart
-    paypal.minicart.render({
-        action: '#'
-    });
 
-    if (~window.location.search.indexOf('reset=true')) {
-        paypal.minicart.reset();
-    }
+<script>
+  $('#desplegar').on('show.bs.modal', function (event) {
+		var imagen = new Image();
+		$('#imagen').empty();		
+		button = $(event.relatedTarget)
+		var id = button.data('id')
+		var extension= button.data('extension')
+		var nombre = button.data('nombre')
+		var codigo = button.data('codigo')
+        var categoria = button.data('categoria')
+        var id_categoria = button.data('id_categoria')
+        var precio = button.data('precio')
+        var descripcion = button.data('descripcion')
+		document.getElementById("id_producto").innerHTML = id;
+   		document.getElementById("nombre").innerHTML = nombre;
+		document.getElementById("nomb").innerHTML = nombre;
+		document.getElementById("categoria").innerHTML = categoria;
+		document.getElementById("precio").innerHTML = precio;
+		document.getElementById("descripcion").innerHTML = descripcion;
+		document.getElementById("codigo").innerHTML = codigo;
+		document.getElementById("imagen").innerHTML='<img src="storage/img/'+id+'.'+extension+'" width="300" height="300"/>';		
+	})
 </script>
-<!-- //cart-js --> 
+
 <!-- video-bg -->
 <script src="{{('js/jquery.vide.min.js')}}"></script>
 <!-- //video-bg -->

@@ -152,6 +152,27 @@
  
     })
 
+    $('#desplegar').on('show.bs.modal', function (event) {
+		var imagen = new Image();
+		$('#imagen').empty();		
+		button = $(event.relatedTarget)
+		var id = button.data('id')
+		var extension= button.data('extension')
+		var nombre = button.data('nombre')
+		var codigo = button.data('codigo')
+        var categoria = button.data('categoria')
+        var id_categoria = button.data('id_categoria')
+        var precio = button.data('precio')
+        var descripcion = button.data('descripcion')
+		document.getElementById("id_producto").innerHTML = id;
+   		document.getElementById("nombre").innerHTML = nombre;
+		document.getElementById("nomb").innerHTML = nombre;
+		document.getElementById("categoria").innerHTML = categoria;
+		document.getElementById("precio").innerHTML = precio;
+		document.getElementById("descripcion").innerHTML = descripcion;
+		document.getElementById("codigo").innerHTML = codigo;
+		document.getElementById("imagen").innerHTML='<img src="storage/img/'+id+'.'+extension+'" width="300" height="300"/>';		
+	})
 
     </script>
 </body>

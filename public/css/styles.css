@@ -314,7 +314,7 @@ ul.social-icons3 li a.wthree_dribbble {
 }
 
 ul.social-icons3 li a.wthree_behance {
-    background: #0096ff;
+    background: lime;
 }
 
 ul.social-icons3 li a:hover {
@@ -540,9 +540,7 @@ li.agileinfo_share {
 }
 
 .top-nav {
-    position: absolute;
     margin: 1em 0 0 0;
-    bottom: -3.5em;
     background: #1b1b1b;
 }
 
@@ -623,6 +621,10 @@ span.fa-home {
 
 .navbar-nav>li>.dropdown-menu {
     margin-top: 26px;
+}
+
+.navbar-toggle collapsed {
+    background-color: white!important;
 }
 
 
@@ -2144,7 +2146,7 @@ ul.about-agile li i {
 
 .connect-w3-agile p a:hover {
     text-decoration: none;
-    color: #000!important;
+    color: rgb(192, 164, 164)!important;
 }
 
 .agileits_w3layouts-map {

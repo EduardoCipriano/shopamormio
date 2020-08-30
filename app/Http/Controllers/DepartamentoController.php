@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use App\Departamento;
 
-class PedidoController extends Controller
+class DepartamentoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,8 +14,12 @@ class PedidoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {    
+        $departamentos= Departamento::where('condicion','=','1')
+        ->select('id','nombre')
+        ->orderBy('nombre', 'asc')
+        ->get();
+        return['departamentos'=>$departamentos];
     }
 
     /**
