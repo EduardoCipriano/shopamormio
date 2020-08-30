@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('principalproducto');
-});
+});*/
 
 Route::get('contacto', function () {
     return view('/mostrar/contacto');
@@ -36,3 +36,4 @@ Route::get('/buynow', 'ProductoController@buynow')->name('buynow');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'MainController@home');

@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class ShoppingCart extends Model
 {
-    protected $filable = ["status"];
+    protected $fillable = ["status"];
+
+    public function productsSize(){
+        return $this->id;
+    }
+
     public static function findOrCreateBySessionID($shopping_cart_id){
         if ($shopping_cart_id)
             return ShoppingCart::findBySession($shopping_cart_id);

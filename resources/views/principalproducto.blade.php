@@ -18,15 +18,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="{{('css/owl.carousel.css')}}" rel="stylesheet">
 <link href="{{('css/styles.css')}}" rel="stylesheet" type="text/css" media="all" />
 <link href="{{('//fonts.googleapis.com/css?family=Tangerine:400,700')}}" rel="stylesheet">
-<link href='{{('//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic')}}' rel='stylesheet' type='text/css'>
+<link href="{{('//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic')}}" rel='stylesheet' type='text/css'>
 </head>
 
 <body class="container-center">
+
 <!-- banner -->
+	
+
     
 <!-- //banner -->
 
-    @include('mostrar.navbar')
+    @include('mostrar.navbar')					
+											 
+				
     @yield('contenido')
     
 

@@ -33,12 +33,14 @@
 					{{csrf_field()}}
 					</form>
 				</li>
-				<li class="nav-cart-w3ls">
-					<form action="#" method="post" class="last"> 
-						<input type="hidden" name="cmd" value="_cart">
-						<input type="hidden" name="display" value="1">
-						<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down fa-1x" aria-hidden="true"></i></button>
-					</form> 
+				<li class="nav-cart-w3ls">	
+							
+					<a class="nav-link">
+						<i class="fa fa-cart-arrow-down fa-1x" aria-hidden="true"></i>
+						<span style="color: font-size: 18px; color: #d22626; font-weight: bold; text-shadow: 1px 1px 2px #000; padding: 7px;
+						line-height: 19px;">{{$shopping_cart->productsSize()}}
+						</span>
+					</a>												 
 				</li>
 			</ul>	
 			<div class="clearfix"> </div>

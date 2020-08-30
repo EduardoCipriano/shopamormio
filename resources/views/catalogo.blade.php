@@ -27,6 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <!--aqui empieza lo de comprar-->
 <!--Buy-now -->
+{{$shopping_cart->productsSize()}}
 	<div class="buy-now">
 		<div class="container">
 			<div class="heading-setion-w3ls">
