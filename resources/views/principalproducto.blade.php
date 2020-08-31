@@ -108,14 +108,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         var id_categoria = button.data('id_categoria')
         var precio = button.data('precio')
         var descripcion = button.data('descripcion')
-		document.getElementById("id_producto").innerHTML = id;
    		document.getElementById("nombre").innerHTML = nombre;
 		document.getElementById("nomb").innerHTML = nombre;
 		document.getElementById("categoria").innerHTML = categoria;
 		document.getElementById("precio").innerHTML = precio;
 		document.getElementById("descripcion").innerHTML = descripcion;
 		document.getElementById("codigo").innerHTML = codigo;
-		document.getElementById("imagen").innerHTML='<img src="storage/img/'+id+'.'+extension+'" width="300" height="300"/>';		
+    document.getElementById("imagen").innerHTML='<img src="storage/img/'+id+'.'+extension+'" width="300" height="300"/>';	
+    var inputNombre = document.getElementById("id_producto");
+    inputNombre.value = id;	
 	})
 </script>
 

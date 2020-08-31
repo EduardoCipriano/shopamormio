@@ -35,7 +35,10 @@
 				</li>
 				<li class="nav-cart-w3ls">	
 							
-					<a class="nav-link">
+					<a class="nav-link" href="{{url('/carrito')}}" onclick="event.preventDefault(); document.getElementById('carrito-form').submit();">
+						<form id="carrito-form" action="{{url('/carrito')}}" method="GET" style="display: none;">
+							{{csrf_field()}} 
+						</form>
 						<i class="fa fa-cart-arrow-down fa-1x" aria-hidden="true"></i>
 						<span style="color: font-size: 18px; color: #d22626; font-weight: bold; text-shadow: 1px 1px 2px #000; padding: 7px;
 						line-height: 19px;">{{$shopping_cart->productsSize()}}

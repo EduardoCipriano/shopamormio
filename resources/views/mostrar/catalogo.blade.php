@@ -47,7 +47,7 @@
 												<input data-toggle="modal" data-target="#desplegar" data-id="{{$p->id}}"  
 												data-nombre="{{$p->nombre}}" data-extension="{{$p->extension}}" data-codigo="{{$p->codigo}}" 
 												data-id_categoria="{{$p->id_categoria}}" data-categoria="{{$p->categoria}}" 
-												data-descripcion="{{$p->descripcion}}" data-precio="{{$p->precio}}" type="button" name="submit" value="Agregar al carrito" class="button" />
+												data-descripcion="{{$p->descripcion}}" data-precio="{{$p->precio}}" type="button" name="submit" value="Ver detalles" class="button" />
 												
 											</fieldset>
 										</form>
@@ -65,57 +65,59 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<h4 class="modal-title" id="nombre"></h4>							
-							</div>
-							<form action="{{route('producto.update','test')}}" method="post"  class="form-horizontal" enctype="multipart/form-data">
-								{{method_field('patch')}}<!-- proteger en la modificacion de registro -->
-								{{ csrf_field() }} 
-								<input type="hidden" id="id_producto" name="id_producto" value="">
-								<div class="modal-body" width="100px" height="100px">	
-									<div class="row">
-										<div class="col-md-5" id="imagen">											
-										</div>
-										<div class="col-md-7 ml-auto">
-											<div class="table-responsive">										
-												<table class="table">
-													<thead>
-														<tr>
-															<th scope="col" colspan="2" class="text-center">Información de artículo</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<th scope="row">Código</th>
-															<td id="codigo"></td>
-														</tr>	
-														<tr>
-															<th scope="row">Nombre</th>
-															<td id="nomb"></td>
-														</tr>
-														<tr>
-															<th scope="row">Categoría</th>
-															<td id="categoria"></td>
-														</tr>
-														<tr>
-															<th scope="row">Precio</th>
-															<td id="precio"></td>
-														</tr>
-														<tr>
-															<th scope="row">Descripción</th>
-															<td id="descripcion"></td>
-														</tr>											
-													</tbody>												
-												</table>
-											</div>
+							</div>						
+							<div class="modal-body" width="100px" height="100px">	
+								<div class="row">
+									<div class="col-md-5" id="imagen">											
+									</div>
+									<div class="col-md-7 ml-auto">
+										<div class="table-responsive">										
+											<table class="table">
+												<thead>
+													<tr>
+														<th scope="col" colspan="2" class="text-center">Información de artículo</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th scope="row">Código</th>
+														<td id="codigo"></td>
+													</tr>	
+													<tr>
+														<th scope="row">Nombre</th>
+														<td id="nomb"></td>
+													</tr>
+													<tr>
+														<th scope="row">Categoría</th>
+														<td id="categoria"></td>
+													</tr>
+													<tr>
+														<th scope="row">Precio</th>
+														<td id="precio"></td>
+													</tr>
+													<tr>
+														<th scope="row">Descripción</th>
+														<td id="descripcion"></td>
+													</tr>											
+												</tbody>												
+											</table>
 										</div>
 									</div>
-								<div class="modal-footer">
-								    <input type="number" value="1" id="cantidad" name="cantidad">									
-									<input  type="submit" name="submit" value="Agregar al carrito" class="button" />
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 								</div>
+								<form action="{{route('in_shopping_carts.store','test')}}" method="post"  class="form-horizontal" enctype="multipart/form-data">
+								
+									{{ csrf_field() }} 
+									<div class="modal-footer">										
+												
+										<input hidden id="id_producto" name="id_producto"/>		
+										<input  type="submit" name="submit" value="Agregar al carrito" class="btn btn-secondary" style="font-size: 11px;
+										letter-spacing: 1px;text-transform: uppercase;color: #fff;border: none;padding: 10px 17px;background: #000;" />									
+										<button type="button" class="btn btn-secondary" data-dismiss="modal" style="    font-size: 11px;
+										letter-spacing: 1px;text-transform: uppercase;	color: #fff;border: none;padding: 10px 17px;background:red ;">Cancelar</button>
+									</div>
+								</form>	
 							</div>
-                    
-                			</form>								
+                										
 							
 							<!-- /.modal-content -->
 						</div>

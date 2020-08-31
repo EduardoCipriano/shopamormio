@@ -27,8 +27,13 @@ Route::get('nosotros', function () {
 
 
 Route::resource('categoria', 'CategoriaController');
+Route::resource('in_shopping_carts', 'InShoppingCartsController',[
+    'only'=>['store','destroy']
+]);
 Route::resource('producto', 'ProductoController');
 Route::get('/buynow', 'ProductoController@buynow')->name('buynow');
+Route::get('/carrito', 'ShoppingCartsController@index');
+
 
 
 
