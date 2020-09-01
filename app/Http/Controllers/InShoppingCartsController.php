@@ -26,9 +26,9 @@ class InShoppingCartsController extends Controller
             "id_producto" => $request->id_producto
         ]);
 
-        if(false)
+        if($response)
         {
-            return redirect ('/carrito');
+            return redirect ('/buynow');
         }
         else{
             return back();
