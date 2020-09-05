@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-/*Route::get('/', function () {
-    return view('principalproducto');
+/*
+Route::get('/', function () {
+    return view('index');
 });*/
 
 Route::get('contacto', function () {
@@ -33,6 +33,8 @@ Route::resource('in_shopping_carts', 'InShoppingCartsController',[
 Route::resource('producto', 'ProductoController');
 Route::get('/buynow', 'ProductoController@buynow')->name('buynow');
 Route::get('/carrito', 'ShoppingCartsController@index');
+Route::delete('eliminar/{id}', 'InShoppingCartsController@destroy')
+    ->name('eliminar.destroy');
 
 
 

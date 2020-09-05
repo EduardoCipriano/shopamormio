@@ -29,14 +29,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     
 <!-- //banner -->
 
-    @include('mostrar.navbar')					
+    @include('mostrar.navbar')	
+    			
 											 
 				
     @yield('contenido')
     
 
-<br>
-<br>
+
 <footer class="copyright container-center">
             
                     <ul class="social-icons3">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\InShoppingCart;
 use App\ShoppingCart; 
+use Illuminate\Support\Facades\Redirect;
 
 class InShoppingCartsController extends Controller
 {
@@ -42,8 +43,14 @@ class InShoppingCartsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        //
+        $shopping_cart_id= \Session::get('shopping_cart_id');
+        $shopping_cart = ShoppingCart::findOrCreateBySessionID($shopping_cart_id);    
+        $shopping_cart->products()->detach($request->id);
+        return Redirect::to("/carrito");
+        
     }
+
+    
 }

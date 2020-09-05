@@ -13,6 +13,7 @@
                     <th>#</th>
                     <th>Producto</th>
                     <th>Precio</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +24,15 @@
                     <td>{{ $i}}</td>
                     <td>{{$p->nombre}}</td>
                     <td>Q. {{$p->precio}}</td>
+                    <td>
+                        <form method="POST" action="{{ url("eliminar/{$p->id}") }}">
+                            @csrf
+                            @method('DELETE')
+                       
+                            <button  class="btn btn-danger" type="submit">X</button>
+                          </form>
+                        
+                    </td>
                 </tr>   
                 @endforeach
                 <tr>

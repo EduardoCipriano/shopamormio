@@ -1,6 +1,40 @@
 @extends('principalproducto')
 @section('contenido')
+
+
 <!--aqui empieza lo de comprar-->
+<div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top navbarproducto">
+	<div class="container-fluid">
+	  <!-- Brand and toggle get grouped for better mobile display -->
+	 
+  
+	  <!-- Collect the nav links, forms, and other content for toggling -->
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse">
+		<ul class="nav navbar-nav">
+		  
+		  <li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categoria <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Ropa</a></li>
+			  <li><a href="#">Juguetes</a></li>
+			  <li><a href="#">Lubricantes</a></li>
+			  
+			</ul>
+		  </li>
+		</ul>
+		<form class="navbar-form navbar-left">
+		  <div class="form-group">
+			<input type="text" class="form-control" placeholder="Buscar">
+		  </div>
+		  <button type="submit" class="glyphicon glyphicon-search btn btn-secondary"  style="font-size: 11px; letter-spacing: 1px;text-transform: uppercase;	color: #fff;border: none;padding: 10px 17px;background:red ;"></button>
+		</form>
+		  </li>
+		</ul>
+	  </div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+  </nav>
+</div>
 <!--Buy-now -->
 <div class="buy-now">
 	<div class="container">
@@ -130,7 +164,8 @@
 		</div>
 	</div>
 </div>
-
+<br>
+<br>
 <!-- //Buy-now -->
 
 @endsection

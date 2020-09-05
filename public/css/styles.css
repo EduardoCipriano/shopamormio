@@ -1919,6 +1919,10 @@ ul.about-agile li i {
     transform: scale(1);
 }
 
+.navbarproducto {
+    top: 95px;
+}
+
 .ih-item.circle.effect10.top_to_bottom .info h3 {
     margin: 0 30px;
     padding: 25px 0 0 0;
