@@ -13,7 +13,8 @@ class ShoppingCart extends Model
     }
 
     public function products(){
-        return $this->belongsToMany('App\Producto', 'in_shopping_carts', 'shopping_cart_id','id_producto');
+        return $this->belongsToMany('App\Producto', 'in_shopping_carts', 'shopping_cart_id','id_producto')
+        ->withPivot('cantidad', 'precio');
     
     }
 
@@ -21,10 +22,7 @@ class ShoppingCart extends Model
         return $this->products()->count();
     }
 
-    public function total()
-    {
-        return $this->products()->sum("precio");
-    }
+    
 
     public static function findOrCreateBySessionID($shopping_cart_id){
         if ($shopping_cart_id)

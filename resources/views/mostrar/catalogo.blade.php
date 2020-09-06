@@ -142,12 +142,16 @@
 								
 									{{ csrf_field() }} 
 									<div class="modal-footer">										
-												
-										<input hidden id="id_producto" name="id_producto"/>		
-										<input  type="submit" name="submit" value="Agregar al carrito" class="btn btn-secondary" style="font-size: 11px;
+										<input hidden id="id_producto" name="id_producto" />
+										<input hidden id="pre" name="pre" />
+										<button type="button" class="btn btn-primary" disabled style="border: none; background: #fff;color: #000  "><h1>Cantidad</h1></button>
+										<button type="button" class="btn btn-secondary" id="cant" style="    font-size: 20px;
+										letter-spacing: 1px;text-transform: uppercase;	color: #fff;border: none;padding: 10px 17px; ;"><div id="cant"></div></button>									
+										<input  type="submit" name="submit" value="Agregar al carrito"  class="btn btn-secondary" style="font-size: 11px;
 										letter-spacing: 1px;text-transform: uppercase;color: #fff;border: none;padding: 10px 17px;background: #000;" />									
 										<button type="button" class="btn btn-secondary" data-dismiss="modal" style="    font-size: 11px;
-										letter-spacing: 1px;text-transform: uppercase;	color: #fff;border: none;padding: 10px 17px;background:red ;">Cancelar</button>
+										letter-spacing: 1px;text-transform: uppercase;	color: #fff;border: none;padding: 10px 17px;background:red ;">Cancelar</button>		
+										
 									</div>
 								</form>	
 							</div>

@@ -13,7 +13,13 @@ class ShoppingCartsController extends Controller
         $shopping_cart = ShoppingCart::findOrCreateBySessionID($shopping_cart_id);    
 
         $productos = $shopping_cart->products()->get();
-        $total= $shopping_cart->total();
-        return view("shopping_carts.index", ["productos"=>$productos, "total"=>$total]);
+        $total=0;
+        foreach ($productos as $p)
+        {
+            $subtotal=$p->pivot->precio*$p->pivot->cantidad; 
+            $total=$total+$subtotal;
+        }
+
+        return view("shopping_carts.index", ["productos"=>$productos], ["total"=>$total]);
     }
 }

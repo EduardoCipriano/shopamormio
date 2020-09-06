@@ -35,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
     @yield('contenido')
     
-
+    <span class="ir-arriba fa fa-arrow-circle-o-up"></span>
 
 <footer class="copyright container-center">
             
@@ -103,21 +103,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		var id = button.data('id')
 		var extension= button.data('extension')
 		var nombre = button.data('nombre')
-		var codigo = button.data('codigo')
-        var categoria = button.data('categoria')
-        var id_categoria = button.data('id_categoria')
-        var precio = button.data('precio')
-        var descripcion = button.data('descripcion')
-   		document.getElementById("nombre").innerHTML = nombre;
+    var categoria = button.data('categoria')
+    var id_categoria = button.data('id_categoria')
+    var precio = button.data('precio')
+    var codigo = button.data('codigo')
+    var descripcion = button.data('descripcion')
+   	document.getElementById("nombre").innerHTML = nombre;
 		document.getElementById("nomb").innerHTML = nombre;
 		document.getElementById("categoria").innerHTML = categoria;
 		document.getElementById("precio").innerHTML = precio;
 		document.getElementById("descripcion").innerHTML = descripcion;
 		document.getElementById("codigo").innerHTML = codigo;
+    document.getElementById("cant").innerHTML='<input id="cantidad" value="1" name="cantidad" type="number"  class="form-control" style="font-size: 11px; letter-spacing: 1px;text-transform: uppercase;color: #000;border: none;padding: 10px 17px;background: #fff;"/>';
     document.getElementById("imagen").innerHTML='<img src="storage/img/'+id+'.'+extension+'" width="300" height="300"/>';	
     var inputNombre = document.getElementById("id_producto");
     inputNombre.value = id;	
+    var inputNombre = document.getElementById("pre");
+    inputNombre.value = precio;
 	})
+</script>
+
+<script>	
+  $(document).ready(function(){
+  
+    $('.ir-arriba').click(function(){
+      $('body, html').animate({
+        scrollTop: '0px'
+      }, 300);
+    });
+  
+    $(window).scroll(function(){
+      if( $(this).scrollTop() > 0 ){
+        $('.ir-arriba').slideDown(300);
+      } else {
+        $('.ir-arriba').slideUp(300);
+      }
+    });
+  
+  });
 </script>
 
 <!-- video-bg -->

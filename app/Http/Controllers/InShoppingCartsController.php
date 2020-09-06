@@ -22,9 +22,14 @@ class InShoppingCartsController extends Controller
         $shopping_cart_id= \Session::get('shopping_cart_id');
         $shopping_cart = ShoppingCart::findOrCreateBySessionID($shopping_cart_id);
 
-        $response=InShoppingCart::create([ 
-            "shopping_cart_id"=> $shopping_cart->id,
-            "id_producto" => $request->id_producto
+        $response=InShoppingCart::updateOrCreate([
+            //Add unique field combo to match here
+            //For example, perhaps you only want one entry per user:
+            'id_producto'   => $request->id_producto,
+        ],[
+            'cantidad'  => $request->get('cantidad'),
+            'precio'    =>  $request->get('pre'),
+            'shopping_cart_id' => $shopping_cart->id
         ]);
 
         if($response)

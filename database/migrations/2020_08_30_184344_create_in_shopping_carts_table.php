@@ -15,6 +15,8 @@ class CreateInShoppingCartsTable extends Migration
     {
         Schema::create('in_shopping_carts', function (Blueprint $table) {
             $table->increments("id");
+            $table->integer("cantidad")->default(1);
+            $table->decimal('precio', 9,2);
             $table->integer("id_producto")->unsigned();
             $table->integer("shopping_cart_id")->unsigned();
 
