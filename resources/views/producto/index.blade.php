@@ -29,7 +29,7 @@
                 </div>
                 <table class="table table-bordered table-striped table-sm">
                     <thead>
-                        <tr class="bg-primary">
+                        <tr class="bg-danger">
                            
                             <th>Codigo</th>
                             <th>Nombre</th>
@@ -132,7 +132,7 @@
 
 <!--Inicio del modal modificar/-->
 <div class="modal fade" id="editarProducto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-primary modal-lg" role="document">
+    <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Editar Producto</h4>
@@ -160,7 +160,7 @@
 
 <!--Inicio del cambiar estado/-->
 <div class="modal fade" id="cambiarEstadoProducto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-primary modal-lg" role="document">
+    <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Cambiar estado</h4>
@@ -191,7 +191,7 @@
 <!--Fin del modal-->
 
 <div class="modal fade" id="verimagen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-primary modal-lg" role="document">
+    <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Producto</h4>
@@ -201,11 +201,11 @@
             </div>
         
             <div class="modal-body">
-            
-                <div id="imagen" class="container-center" width="100%" height="100%">
-                    
+                <div class="row container">
+                    <div class="table-responsive">
+                        <div id="imagen" class="col-md-6" ></div>
+                    </div>
                 </div>
-
             </div>
             
         </div>

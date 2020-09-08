@@ -98,8 +98,29 @@ class ProductoController extends Controller
         $productos->descripcion=$request->descripcion;
         $productos->precio= $request->precio;
         $productos->condicion='1';
+        $hasFile = $request->hasFile('cover') && $request->cover->isValid();  //has File para ver si viene un archivo o no, y isValid devuelve verdadero cuando el archivo se pudo subir
+        //despues que el producto se haya guardado se va a mover
+        //el archivo de una carpeta temporal a una carpeta del proyecto
+        if($hasFile)
+        {
+            $extension = $request->cover->extension(); //extramos extension de la imagen
+            $productos->extension=$extension; //guardamos extension de la imagen en la tabla
+            //develve la extension del archivo
+        }
         $productos->save();
-        return Redirect::to("producto");
+       
+
+        if($productos->save())//si se guardo el registro
+        {
+            if($hasFile) //si se recibio un archivo
+            {
+                $request->cover->storeAs('public/img', "$productos->id.$extension"); //images es la carpeta donde se va a guardar
+                ///store crea un nombre aleatorio, storeAs nosotros le asignamos un nombre
+            }
+        }
+        return Redirect::to("producto");//redireccionar al index
+       
+        
     }
 
     /**

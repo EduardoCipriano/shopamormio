@@ -53,8 +53,8 @@
 					<!-- normal -->
 					<div class="ih-item circle effect10 bottom_to_top">
 						<br>			
-						<div class="img">
-							<img src="{{asset('storage/img/'.$p->id.'.'.$p->extension)}}"  alt="img">																			
+						<div class="img" style="width: 250px; height: 250px">
+							<img src="{{asset('storage/img/'.$p->id.'.'.$p->extension)}}" style="width: 250px; height: 250px" alt="img">																			
 						</div>								
 						<div class="info">
 							<a class="modal-container" type="button" data-toggle="modal" data-id="{{$p->id}}"  

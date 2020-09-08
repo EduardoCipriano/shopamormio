@@ -16,31 +16,34 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });*/
+Route::group(['middleware'=>['guest']],function(){
 
-Route::get('contacto', function () {
-    return view('/mostrar/contacto');
-});
+    Route::get('contacto', function () {
+        return view('/mostrar/contacto');
+    });
+    
+    Route::get('nosotros', function () {
+        return view('/mostrar/nosotros');
+    });
 
-Route::get('nosotros', function () {
-    return view('/mostrar/nosotros');
-});
-
-
-Route::resource('categoria', 'CategoriaController');
-Route::resource('in_shopping_carts', 'InShoppingCartsController',[
-    'only'=>['store','destroy']
-]);
-Route::resource('producto', 'ProductoController');
-Route::get('/buynow', 'ProductoController@buynow')->name('buynow');
-Route::get('/carrito', 'ShoppingCartsController@index');
-Route::delete('eliminar/{id}', 'InShoppingCartsController@destroy')
+    Route::resource('in_shopping_carts', 'InShoppingCartsController',[
+        'only'=>['store','destroy']
+    ]);
+        
+    Route::get('/buynow', 'ProductoController@buynow')->name('buynow');
+    Route::get('/carrito', 'ShoppingCartsController@index');
+    Route::delete('eliminar/{id}', 'InShoppingCartsController@destroy')
     ->name('eliminar.destroy');
+    Route::get('/', 'MainController@home'); 
+});
 
+Route::group(['middleware'=>['auth']],function(){
 
+    Route::resource('categoria', 'CategoriaController');        
+    Route::resource('producto', 'ProductoController');
+    Route::get('/home', 'HomeController@index')->name('home');
+      
 
-
+});
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'MainController@home');

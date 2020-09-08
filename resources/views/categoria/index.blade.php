@@ -29,7 +29,7 @@
                 </div>
                 <table class="table table-bordered table-striped table-sm">
                     <thead>
-                        <tr class="bg-primary">
+                        <tr class="bg-danger">
                            
                             <th>Categoría</th>
                             <th>Descripción</th>
@@ -91,7 +91,7 @@
 
    <!--Inicio del modal agregar/-->
    <div class="modal fade" id="agregarcategoria" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-primary modal-lg" role="document">
+    <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Agregar Categoria</h4>
@@ -117,7 +117,7 @@
 
 <!--Inicio del modal modificar/-->
 <div class="modal fade" id="abrirmodalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-primary modal-lg" role="document">
+    <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Editar Categoria</h4>
@@ -145,7 +145,7 @@
 
 <!--Inicio del cambiar estado/-->
 <div class="modal fade" id="cambiarEstado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-primary modal-lg" role="document">
+    <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Cambiar estado</h4>
