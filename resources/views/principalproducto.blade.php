@@ -10,15 +10,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //custom-theme -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{{URL::asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
 
 <!-- font-awesome-icons -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="{{URL::asset('css/font-awesome.css')}}" rel="stylesheet"> 
 <!-- //font-awesome-icons -->
-<link href="{{('css/owl.carousel.css')}}" rel="stylesheet">
-<link href="{{('css/styles.css')}}" rel="stylesheet" type="text/css" media="all" />
-<link href="{{('//fonts.googleapis.com/css?family=Tangerine:400,700')}}" rel="stylesheet">
-<link href="{{('//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic')}}" rel='stylesheet' type='text/css'>
+<link href="{{URL::asset('css/owl.carousel.css')}}" rel="stylesheet">
+<link href="{{URL::asset('css/styles.css')}}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{URL::asset('//fonts.googleapis.com/css?family=Tangerine:400,700')}}" rel="stylesheet">
+<link href="{{URL::asset('//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic')}}" rel='stylesheet' type='text/css'>
 </head>
 
 <body class="container-center">
@@ -54,9 +54,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- js -->
 
    
-<script type="text/javascript" src="{{('js/jquery-2.1.4.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('js/jquery-2.1.4.min.js')}}"></script>
 <!-- //js -->
-<script src="{{('js/responsiveslides.min.js')}}"></script>
+<script src="{{URL::asset('js/responsiveslides.min.js')}}"></script>
         <script>
                     // You can also use "$(window).load(function() {"
                     $(function () {
@@ -78,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     });
         </script>
 <!-- for-Clients -->
-    <script src="{{('js/owl.carousel.js')}}"></script>
+    <script src="{{URL::asset('js/owl.carousel.js')}}"></script>
         <!-- requried-jsfiles-for owl -->
                                 <script>
                                     $(document).ready(function() {
@@ -144,14 +144,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 
 <!-- video-bg -->
-<script src="{{('js/jquery.vide.min.js')}}"></script>
+<script src="{{URL::asset('js/jquery.vide.min.js')}}"></script>
 <!-- //video-bg -->
 <!-- Nice scroll -->
-<script src="{{('js/jquery.nicescroll.js')}}"></script>
-<script src="{{('js/scripts.js')}}"></script>
+<script src="{{URL::asset('js/jquery.nicescroll.js')}}"></script>
+<script src="{{URL::asset('js/scripts.js')}}"></script>
 <!-- //Nice scroll -->
 <!-- for bootstrap working -->
-<script type="text/javascript" src="{{('js/bootstrap-3.1.1.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('js/bootstrap-3.1.1.min.js')}}"></script>
 <!-- //for bootstrap working -->
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v8.0" nonce="6NIVgELP"></script>

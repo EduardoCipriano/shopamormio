@@ -519,6 +519,7 @@ class ComposerStaticInita46dd4e37177cefefcbb9a409bc1bb61
         'App\\Http\\Controllers\\InShoppingCartsController' => __DIR__ . '/../..' . '/app/Http/Controllers/InShoppingCartsController.php',
         'App\\Http\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/Http/Controllers/MainController.php',
         'App\\Http\\Controllers\\MunicipioController' => __DIR__ . '/../..' . '/app/Http/Controllers/MunicipioController.php',
+        'App\\Http\\Controllers\\PedidoController' => __DIR__ . '/../..' . '/app/Http/Controllers/PedidoController.php',
         'App\\Http\\Controllers\\ProductoController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductoController.php',
         'App\\Http\\Controllers\\ShoppingCartsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ShoppingCartsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',

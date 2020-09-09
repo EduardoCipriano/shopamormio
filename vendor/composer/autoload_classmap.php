@@ -23,6 +23,7 @@ return array(
     'App\\Http\\Controllers\\InShoppingCartsController' => $baseDir . '/app/Http/Controllers/InShoppingCartsController.php',
     'App\\Http\\Controllers\\MainController' => $baseDir . '/app/Http/Controllers/MainController.php',
     'App\\Http\\Controllers\\MunicipioController' => $baseDir . '/app/Http/Controllers/MunicipioController.php',
+    'App\\Http\\Controllers\\PedidoController' => $baseDir . '/app/Http/Controllers/PedidoController.php',
     'App\\Http\\Controllers\\ProductoController' => $baseDir . '/app/Http/Controllers/ProductoController.php',
     'App\\Http\\Controllers\\ShoppingCartsController' => $baseDir . '/app/Http/Controllers/ShoppingCartsController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',

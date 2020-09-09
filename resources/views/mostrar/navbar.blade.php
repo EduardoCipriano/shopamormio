@@ -7,7 +7,7 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="home-icon"><a href="{{url('/')}}"><img src="img/logo.png" style=" width:25px; height:19px" alt="logo"></a></li>
+				<li class="home-icon"><a href="{{url('/')}}"><img src="{{URL::asset('img/logo.png')}}" style=" width:25px; height:19px" alt="logo"></a></li>
 				
 			
 				

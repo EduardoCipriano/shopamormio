@@ -23,11 +23,11 @@ class ShoppingCartsController extends Controller
         return view("shopping_carts.index", ["productos"=>$productos], ["total"=>$total]);
     }
 
-    public function show ($id){
+    public function show($id){
         $shopping_cart = ShoppingCart::where('customid', $id)->first();
 
         $pedido = $shopping_cart->pedido();
-        return view ("shopping_carts.completed", ["shopping_cart"=>$shopping_cart,"pedido"=>$pedido]);
+        return view ("shopping_carts.finaly", ["shopping_cart"=>$shopping_cart,"pedido"=>$pedido]);
 
     }
 }
