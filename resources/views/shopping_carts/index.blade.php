@@ -88,8 +88,9 @@
             </div>
            
             <div class="modal-body">
-                <form action="{{route('categoria.store')}}" method="post"  class="form-horizontal">
-                {{ csrf_field() }} 
+                <form action="{{route('pedido.store')}}" method="post"  class="form-horizontal">
+                {{ csrf_field() }}
+                <input hidden id="total" name="total" value="{{$total}}" /> 
                     @include('shopping_carts.form')
                     
                 </form>
