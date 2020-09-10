@@ -31,7 +31,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="des">Dirección</label>
     <div class="col-md-9">
-            <input type="text" class="form-control" placeholder="Dirección" id="direccion" name="direccion" required  pattern="[A-Za-z0-9 -]{5,240}"
+            <input type="text" class="form-control" placeholder="Dirección" id="direccion" name="direccion" required  pattern="[A-Za-z0-9 -,]{5,240}"
             title="Letras y números. Tamaño máximo: 240">
     </div>
 </div>

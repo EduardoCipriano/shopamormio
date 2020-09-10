@@ -43,4 +43,17 @@ class PedidoController extends Controller
 
         return view ("shopping_carts.completed", ["shopping_cart"=>$shopping_cart,"pedido"=>$pedido, "departamento"=>$departamento, "municipio"=>$municipio]);
     }
+
+    public function index()
+    {
+        $pedidos = Pedido::latest();
+
+        return view ('pedido.index', ['pedidos'=>$pedido]);
+    }
+
+    public function update (Request $request, $id)
+    {
+
+    }
+
 }

@@ -30,6 +30,21 @@ class Pedido extends Model
         return $this->belongsTo('App\Municipio', 'id_municipio');
     }
 
+    public function scopeLatest($query)
+    {
+        return $query->orderID()->monthly();
+    }
+
+    public function scopeOrderID($query)
+    {
+        return $query->orderBy("id", "desc");
+    }
+
+    public function scopeMonthly($query)
+    {
+        return $query->where("created_at","=",date('m'));
+    }
+
     
 }
 

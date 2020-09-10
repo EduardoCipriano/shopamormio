@@ -35,7 +35,9 @@ Route::group(['middleware'=>['guest']],function(){
     Route::delete('eliminar/{id}', 'InShoppingCartsController@destroy')
     ->name('eliminar.destroy');
     Route::get('/', 'MainController@home'); 
-    Route::resource('pedido', 'PedidoController');
+    Route::resource('pedido', 'PedidoController', [
+        'only' => 'store'
+    ]);
     Route::resource ('compras', 'ShoppingCartsController', [
         'only' => ['show']
     ]);
@@ -47,6 +49,9 @@ Route::group(['middleware'=>['auth']],function(){
     Route::resource('categoria', 'CategoriaController');        
     Route::resource('producto', 'ProductoController');
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('pedido', 'PedidoController',[
+        'only' => ['index, update']
+    ]);
       
 
 });

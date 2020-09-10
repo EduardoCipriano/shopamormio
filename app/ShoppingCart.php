@@ -45,9 +45,15 @@ class ShoppingCart extends Model
 
     public static function findOrCreateBySessionID($shopping_cart_id){
         if ($shopping_cart_id)
+        {
             return ShoppingCart::findBySession($shopping_cart_id);
+         
+        }
+            
         else
+        {
             return ShoppingCart::createWithoutSession();
+        }
     }
     
 

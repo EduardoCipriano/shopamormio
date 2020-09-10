@@ -14,6 +14,7 @@ class ShoppingCartsController extends Controller
         $shopping_cart = ShoppingCart::findOrCreateBySessionID($shopping_cart_id);    
 
         $productos = $shopping_cart->products()->get();
+        $productsCount= $shopping_cart->productsSize();
         $total=0;
         foreach ($productos as $p)
         {
@@ -26,7 +27,7 @@ class ShoppingCartsController extends Controller
         ->orderBy('nombre', 'asc')
         ->get();
 
-        return view("shopping_carts.index", ["productos"=>$productos, "total"=>$total, 'departamentos'=>$departamentos]);
+        return view("shopping_carts.index", ["productsCount"=>$productsCount, "productos"=>$productos, "total"=>$total, 'departamentos'=>$departamentos]);
     }
 
     public function show($id){
