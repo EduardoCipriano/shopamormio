@@ -35,8 +35,12 @@ class PedidoController extends Controller
         ]);
 
         $shopping_cart->approve();
+
+        $municipio= $pedido->municipio->nombre;
+        $departamento= $pedido->departamento->nombre;
+
                         
 
-        return view ("shopping_carts.completed", ["shopping_cart"=>$shopping_cart,"pedido"=>$pedido]);
+        return view ("shopping_carts.completed", ["shopping_cart"=>$shopping_cart,"pedido"=>$pedido, "departamento"=>$departamento, "municipio"=>$municipio]);
     }
 }

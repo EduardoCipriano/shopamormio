@@ -82,15 +82,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Datos de tu pedido</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
             </div>
            
             <div class="modal-body">
                 <form action="{{route('pedido.store')}}" method="post"  class="form-horizontal">
                 {{ csrf_field() }}
                 <input hidden id="total" name="total" value="{{$total}}" /> 
+                
                     @include('shopping_carts.form')
                     
                 </form>

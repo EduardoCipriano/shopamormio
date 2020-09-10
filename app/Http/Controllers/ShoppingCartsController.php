@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\ShoppingCart;
+use App\Departamento;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -20,14 +21,21 @@ class ShoppingCartsController extends Controller
             $total=$total+$subtotal;
         }
 
-        return view("shopping_carts.index", ["productos"=>$productos], ["total"=>$total]);
+        $departamentos= Departamento::where('condicion','=','1')
+        ->select('id','nombre')
+        ->orderBy('nombre', 'asc')
+        ->get();
+
+        return view("shopping_carts.index", ["productos"=>$productos, "total"=>$total, 'departamentos'=>$departamentos]);
     }
 
     public function show($id){
         $shopping_cart = ShoppingCart::where('customid', $id)->first();
 
         $pedido = $shopping_cart->pedido();
-        return view ("shopping_carts.finaly", ["shopping_cart"=>$shopping_cart,"pedido"=>$pedido]);
+        $municipio= $pedido->municipio->nombre;
+        $departamento= $pedido->departamento->nombre;
+        return view ("shopping_carts.finaly", ["shopping_cart"=>$shopping_cart,"pedido"=>$pedido, "departamento"=>$departamento, "municipio"=>$municipio]);
 
     }
 }

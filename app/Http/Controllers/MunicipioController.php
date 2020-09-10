@@ -89,4 +89,21 @@ class MunicipioController extends Controller
     {
         //
     }
+
+
+    public function selectMunicipio(Request $request, $id)
+    {
+
+        //if(!$request->ajax()) return redirect('/');
+        $municipios= Municipio::where('condicion','=','1')
+        ->where('id_departamento','=',$id)
+        ->select('id','nombre')
+        ->orderBy('nombre', 'asc')
+        ->get();
+
+        
+        return response()->json($municipios);
+
+        //return['municipios'=>$municipios];
+    }
 }

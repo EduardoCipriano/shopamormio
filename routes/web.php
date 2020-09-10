@@ -39,6 +39,7 @@ Route::group(['middleware'=>['guest']],function(){
     Route::resource ('compras', 'ShoppingCartsController', [
         'only' => ['show']
     ]);
+    Route::get('selectMunicipio/{id}','MunicipioController@selectMunicipio');
 });
 
 Route::group(['middleware'=>['auth']],function(){

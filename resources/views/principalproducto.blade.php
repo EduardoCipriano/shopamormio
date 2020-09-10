@@ -141,6 +141,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
   
   });
+
+ 
+</script>
+
+<script>
+
+    $("#id_departamento").change(function(event)
+    {
+        $.get("/selectMunicipio/"+event.target.value+"", function(response, selectMunicipio){
+            $("#id_municipio").empty();
+            for (i=0;i<response.length;i++){
+                $("#id_municipio").append("<option value='"+response[i].id+"'>"+response[i].nombre+"</option>");
+            }
+        });   
+    });
 </script>
 
 <!-- video-bg -->

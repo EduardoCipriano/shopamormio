@@ -14,7 +14,7 @@ class DepartamentoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    
+    {   ;
         $departamentos= Departamento::where('condicion','=','1')
         ->select('id','nombre')
         ->orderBy('nombre', 'asc')
@@ -22,6 +22,7 @@ class DepartamentoController extends Controller
         return['departamentos'=>$departamentos];
     }
 
+    
     /**
      * Show the form for creating a new resource.
      *

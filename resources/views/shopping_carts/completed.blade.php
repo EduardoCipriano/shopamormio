@@ -30,7 +30,7 @@
                 </tr>
                 <tr>
                     <th scope="row">Direccion</th>
-                    <td>{{$pedido->direccion}}, {{$pedido->id_municipio}}, {{$pedido->id_departamento}}</td>
+                    <td>{{$pedido->direccion}}, {{$municipio}}, {{$departamento}}</td>
                 </tr>
                 <tr>
                     <td class="text-center" scope="row" colspan="4">
@@ -49,4 +49,4 @@
 
 
 
-@endsectioncom
+@endsection

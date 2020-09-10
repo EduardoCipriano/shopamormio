@@ -17,4 +17,19 @@ class Pedido extends Model
                           "guia",
                           "total",
                           "fecha"];
+
+    
+
+    public function departamento()
+    {
+        return $this->belongsTo('App\Departamento', 'id_departamento');
+    }
+
+    public function municipio()
+    {
+        return $this->belongsTo('App\Municipio', 'id_municipio');
+    }
+
+    
 }
+
