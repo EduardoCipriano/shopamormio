@@ -1,41 +1,41 @@
 @extends('principal')
  @section('contenido')
  <!-- Contenido Principal -->
- <main class="main">
+ <main class="container-fluid main">
     <!-- Breadcrumb -->
     <ol class="breadcrumb">
-        <li class="breadcrumb-item active"><a href="/">Sistema Shop</a></li>
+        <li class="breadcrumb-item active"><a href="/">Sistema de Pedidos AmormioShop</a></li>
     </ol>
     <div class="container-fluid">
         <!-- Ejemplo de tabla Listado -->
         <div class="card">
             <div class="card-header">
-               <h2>Ventas</h2>
                <h2>Estadisticas</h2>                
             </div>
-            <div class="card-body">
-                <div class="col-xs-4 col-md-3 col-lg-2">
-                    <span>Q. {{$totalMonth}}</span>
+            <div class="card-body row top-space">
+                <div class="col-xs-4 col-md-3 col-lg-6 sale-data" style="padding: 1em; text-align: center; border-right: solid 5px #690b0b;">
+                    <span style=" display: block; font-size: 2.6em; color: #690b0b;">Q. {{$totalMonth}}</span>
                     Monto de pedidos en el mes
                 </div>
-                <div class="col-xs-4 col-md-3 col-lg-2">
-                    <span>Q. {{$totalMonthCount}}</span>
+                <div class="col-xs-4 col-md-3 col-lg-6 sale-data "  style="padding: 1em; text-align: center; ">
+                    <span style=" display: block; font-size: 2.6em; color: #690b0b;">{{$totalMonthCount}}</span>
                     Total de pedidos en el mes
+                    
                 </div>
-               
-                <table class="table table-bordered table-striped table-sm">
-                    <thead>
-                        <tr class="bg-danger">
+               <div style="padding: 1em;"></div>
+                <table class="table table-hover table-sm table-responsive">
+                    <thead class="bg-dark text-white" >
+                        <tr >
                            
                             <th>ID. pedido</th>
                             <th>Cliente</th>
                             <th>Dirección</th>
                             <th>No. guía</th>
-                            <th>Status</th>
+                            <th>Estado</th>
                             <th>Total</th>
-                            <th>Fecha de pedido</th>
-                            <th>Método de pago</th>
-                            <th>Acciones</th>
+                            <th>Fecha</th>
+                            <th>Pago</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -67,7 +67,7 @@
                                 <td>{{$p->total}}</td>
                                 <td>{{$p->fecha}}</td>
                                 <td>{{$p->metodo_pago}}</td>
-                                <td>Acciones</td>
+                               
                             </tr>   
                     @endforeach   
                     </tbody>

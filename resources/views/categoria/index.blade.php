@@ -4,14 +4,14 @@
  <main class="main">
     <!-- Breadcrumb -->
     <ol class="breadcrumb">
-        <li class="breadcrumb-item active"><a href="/">Sistema Shop</a></li>
+        <li class="breadcrumb-item active"><a href="/">Sistema de Pedidos AmormioShop</a></li>
     </ol>
     <div class="container-fluid">
         <!-- Ejemplo de tabla Listado -->
         <div class="card">
             <div class="card-header">
                <h2>Listado de Categorías</h2><br/>
-                <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#agregarcategoria">
+                <button class="btn btn-danger btn-lg" type="button" data-toggle="modal" data-target="#agregarcategoria">
                     <i class="fa fa-plus fa-1x"></i>&nbsp;&nbsp;Agregar Categoría
                 </button>
             </div>
@@ -22,14 +22,14 @@
                         {{ Form::open(array('url'=>'categoria', 'method'=>'GET','autocomplete'=>'off','role'=>'search'))}}
                         <div class="input-group">
                             <input type="search" class="form-control" name="buscar" placeholder="Buscar" value="{{$buscar}}">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Buscar</button>
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-search"></i> Buscar</button>
                         </div>
                         {{Form::close()}}
                     </div>
                 </div>
-                <table class="table table-bordered table-striped table-sm">
-                    <thead>
-                        <tr class="bg-danger">
+                <table class="table table-hover table-sm table-responsive">
+                    <thead class="bg-dark text-white" >
+                        <tr >
                            
                             <th>Categoría</th>
                             <th>Descripción</th>
@@ -62,7 +62,7 @@
                             </td>
 
                             <td>
-                                <button type="button" class="btn btn-info btn-md" data-id_categoria="{{$c->id}}" data-nombre="{{$c->nombre}}" data-descripcion="{{$c->descripcion}}" data-toggle="modal" data-target="#abrirmodalEditar">
+                                <button type="button" class="btn btn-secondary btn-md" data-id_categoria="{{$c->id}}" data-nombre="{{$c->nombre}}" data-descripcion="{{$c->descripcion}}" data-toggle="modal" data-target="#abrirmodalEditar">
 
                                   <i class="fa fa-edit fa-1x"></i> Editar
                                 </button> &nbsp;

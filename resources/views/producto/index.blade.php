@@ -4,14 +4,14 @@
  <main class="main">
     <!-- Breadcrumb -->
     <ol class="breadcrumb">
-        <li class="breadcrumb-item active"><a href="/">Sistema Shop</a></li>
+        <li class="breadcrumb-item active"><a href="/">Sistema de Pedidos AmormioShop</a></li>
     </ol>
     <div class="container-fluid">
         <!-- Ejemplo de tabla Listado -->
         <div class="card">
             <div class="card-header">
                <h2>Listado de productos</h2><br/>
-                <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#agregarproducto">
+                <button class="btn btn-danger btn-lg" type="button" data-toggle="modal" data-target="#agregarproducto">
                     <i class="fa fa-plus fa-1x"></i>&nbsp;&nbsp;Agregar Producto
                 </button>
             </div>
@@ -22,14 +22,14 @@
                         {{ Form::open(array('url'=>'producto', 'method'=>'GET','autocomplete'=>'off','role'=>'search'))}}
                         <div class="input-group">
                             <input type="search" class="form-control" name="buscar" placeholder="Buscar" value="{{$buscar}}">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Buscar</button>
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-search"></i> Buscar</button>
                         </div>
                         {{Form::close()}}
                     </div>
                 </div>
-                <table class="table table-bordered table-striped table-sm">
-                    <thead>
-                        <tr class="bg-danger">
+                <table class="table table-hover table-sm table-responsive">
+                    <thead class="bg-dark text-white" >
+                        <tr >
                            
                             <th>Codigo</th>
                             <th>Nombre</th>
@@ -77,7 +77,7 @@
                             </td>
                             
                             <td>
-                                <button type="button" class="btn btn-info btn-md" data-id_producto="{{$p->id}}" data-codigo="{{$p->codigo}}" data-id_categoria="{{$p->id_categoria}}" data-nombre="{{$p->nombre}}" data-descripcion="{{$p->descripcion}}" data-precio="{{$p->precio}}" data-toggle="modal" data-target="#editarProducto">
+                                <button type="button" class="btn btn-secondary btn-md" data-id_producto="{{$p->id}}" data-codigo="{{$p->codigo}}" data-id_categoria="{{$p->id_categoria}}" data-nombre="{{$p->nombre}}" data-descripcion="{{$p->descripcion}}" data-precio="{{$p->precio}}" data-toggle="modal" data-target="#editarProducto">
 
                                   <i class="fa fa-edit fa-1x"></i> Editar
                                 </button> &nbsp;
@@ -106,7 +106,7 @@
 
    <!--Inicio del modal agregar/-->
    <div class="modal fade" id="agregarproducto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-primary modal-lg" role="document">
+    <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Agregar Producto</h4>

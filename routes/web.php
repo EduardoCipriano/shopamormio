@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::group(['middleware'=>['guest']],function(){
 
     Route::resource('pedido', 'PedidoController',[
-        'only' => ['index', 'update', 'store']
+        'only' => ['store']
     ]);
 
     Route::get('contacto', function () {
@@ -53,7 +53,10 @@ Route::group(['middleware'=>['auth']],function(){
     Route::resource('categoria', 'CategoriaController');        
     Route::resource('producto', 'ProductoController');
     Route::get('/home', 'HomeController@index')->name('home');
-   
+    Route::resource('pedido', 'PedidoController',[
+        'only' => ['index', 'update']
+    ]);
+
       
 
 });
