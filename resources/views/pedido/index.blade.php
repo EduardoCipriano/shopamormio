@@ -13,23 +13,22 @@
                <h2>Estadisticas</h2>                
             </div>
             <div class="card-body row top-space">
-                <div class="col-xs-4 col-md-3 col-lg-6 sale-data" style="padding: 1em; text-align: center; border-right: solid 5px #690b0b;">
-                    <span style=" display: block; font-size: 2.6em; color: #690b0b;">Q. {{$totalMonth}}</span>
-                    Monto de pedidos en el mes
+                <div class="col-xs-4 col-md-3 col-lg-6 sale-data" style="height: 80px; padding: 1em; text-align: center; border-right: solid 5px black;">
+                    <span style=" display: block; font-size: 2em; color: red;">Q. {{$totalMonth}}</span>
+                    <p class="lead">Monto de pedidos en el mes</p>
                 </div>
                 <div class="col-xs-4 col-md-3 col-lg-6 sale-data "  style="padding: 1em; text-align: center; ">
-                    <span style=" display: block; font-size: 2.6em; color: #690b0b;">{{$totalMonthCount}}</span>
-                    Total de pedidos en el mes
+                    <span style=" display: block; font-size: 2em; color: red;">{{$totalMonthCount}}</span>
+                    <p class="lead">Total de pedidos en el mes </p>
                     
                 </div>
-               <div style="padding: 1em;"></div>
                 <table class="table table-hover table-sm table-responsive">
                     <thead class="bg-dark text-white" >
-                        <tr >
+                        <tr class="text-center">
                            
-                            <th>ID. pedido</th>
-                            <th>Cliente</th>
-                            <th>Dirección</th>
+                            <th class="text-center">ID.</th>
+                            <th class="text-center">Cliente</th>
+                            <th class="text-center">Dirección</th>
                             <th>No. guía</th>
                             <th>Estado</th>
                             <th>Total</th>
