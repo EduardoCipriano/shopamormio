@@ -41,8 +41,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             
                     <ul class="social-icons3">
                         <p>Nuestras Redes Sociales</p>
-                        <li><a href="https://www.facebook.com/amormioshopgt" class="wthree_facebook"> <i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.instagram.com/amormio.gt" class="wthree_dribbble"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.facebook.com/amormioshopgt" class="wthree_facebook" target="_blank"> <i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/amormio.gt" class="wthree_dribbble" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                         <li><a href="https://api.whatsapp.com/send?phone=50254342422" class="wthree_behance" target="_blank"> <i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
                         <p>© 2020 Todos los derechos reservados | Creado por <a href="">Camaleón</a></p>
                     </ul>
