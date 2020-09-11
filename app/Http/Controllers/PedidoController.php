@@ -1,16 +1,38 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Pedido;
 use App\ShoppingCart;
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-
+use Illuminate\Support\Facades\Redirect;
+use App\Categoria;
 
 class PedidoController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $pedidos = Pedido::latest()->paginate(15);
+        $totalMonth= Pedido::totalMonth();
+        $totalMounthCount= Pedido::totalMonthCount();
+        return view ('pedido.index', ['pedidos'=>$pedidos, 
+        'totalMonth' => $totalMonth, 'totalMonthCount' => $totalMounthCount]);
+    }
+
+    
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         $shopping_cart_id= \Session::get('shopping_cart_id');
@@ -18,7 +40,7 @@ class PedidoController extends Controller
 
         $tiempo=Carbon::now('America/Guatemala');
 
-    \Session::remove("shopping_cart_id");
+         \Session::remove("shopping_cart_id");
 
         $pedido=Pedido::create([            
             'shopping_cart_id' => $shopping_cart_id,
@@ -44,16 +66,22 @@ class PedidoController extends Controller
         return view ("shopping_carts.completed", ["shopping_cart"=>$shopping_cart,"pedido"=>$pedido, "departamento"=>$departamento, "municipio"=>$municipio]);
     }
 
-    public function index()
+   
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
     {
-        $pedidos = Pedido::latest();
-
-        return view ('pedido.index', ['pedidos'=>$pedido]);
+        $pedido = Pedido::find($id);
+        $field = $request->name;
+        $pedido->$field = $request->value;
+        $pedido->save();
+        return $pedido->$field;
     }
 
-    public function update (Request $request, $id)
-    {
-
-    }
-
+   
 }

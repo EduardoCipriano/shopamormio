@@ -18,7 +18,15 @@ class Pedido extends Model
                           "total",
                           "fecha"];
 
-    
+    public static function  totalMonth()
+    {
+        return Pedido::monthly()->sum("total");
+    }
+
+    public static function  totalMonthCount()
+    {
+        return Pedido::monthly()->count();
+    }
 
     public function departamento()
     {
@@ -42,8 +50,10 @@ class Pedido extends Model
 
     public function scopeMonthly($query)
     {
-        return $query->where("created_at","=",date('m'));
+        return $query->whereMonth("created_at","=",date('m'));
     }
+
+    
 
     
 }

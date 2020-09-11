@@ -8,11 +8,15 @@
     <meta name="description" content="Sistema Compras-Ventas con Laravel y Vue Js- webtraining-it.com">
     <meta name="keyword" content="Sistema Compras-Ventas con Laravel y Vue Js">
     <title>Proyecto</title>
+    
     <!-- Icons -->
+    <link href="{{URL::asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{('css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{('css/simple-line-icons.min.css')}}" rel="stylesheet">
+    
     <!-- Main styles for this application -->
     <link href="{{('css/style.css')}}" rel="stylesheet">
+    <link href="{{('css/bootstrap-editable.css')}}" rel="stylesheet">
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -78,14 +82,32 @@
     </footer>
 
     <!-- Bootstrap and necessary plugins -->
-    <script src="{{('js/jquery.min.js')}}"></script>
-    <script src="{{('js/popper.min.js')}}"></script>
-    <script src="{{('js/bootstrap.min.js')}}"></script>
-    <script src="{{('js/pace.min.js')}}"></script>
-    <!-- Plugins and scripts required by all views -->
-    <script src="{{('js/Chart.min.js')}}"></script>
-    <!-- GenesisUI main scripts -->
-    <script src="{{('js/template.js')}}"></script>
+    <script src="{{URL::asset('js/jquery.min.js')}}"></script>
+    <script src="{{URL::asset('js/popper.min.js')}}"></script>
+    <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('js/pace.min.js')}}"></script>
+    <script src="{{URL::asset('js/bootstrap-editable.min.js')}}"></script>  
+    <script src="{{URL::asset('js/Chart.min.js')}}"></script>
+    <script src="{{URL::asset('js/template.js')}}"></script>
+
+
+    <script>
+        $.fn.editable.defaults.mode = 'inline';
+        $.fn.editable.defaults.ajaxOptions = { type: 'PUT' };
+        $(document).ready(function() {
+
+            $(".set-guia").editable();
+
+            $(".select-status").editable({
+                source: [
+                    { value: "creado", text: "Creado"},
+                    { value: "enviado", text: "Enviado"},
+                    { value: "entregado", text: "Entregado"},
+                    { value: "cancelado", text: "Cancelado"}
+                ]
+            });
+        });
+    </script>
 
     <script>
         /*EDITAR categoria EN VENTANA MODAL*/
@@ -189,6 +211,8 @@
 	})
 
     </script>
+
+   
 </body>
 
 </html>
