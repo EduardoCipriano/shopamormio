@@ -19,7 +19,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos = Pedido::latest()->paginate(15);
+        $pedidos = Pedido::latest()->paginate(10);
         $totalMonth= Pedido::totalMonth();
         $totalMounthCount= Pedido::totalMonthCount();
         return view ('pedido.index', ['pedidos'=>$pedidos, 

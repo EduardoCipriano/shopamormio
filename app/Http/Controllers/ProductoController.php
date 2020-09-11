@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Redirect;
 use App\Producto;
 use DB; 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PedidoCreated;
 
 
 class ProductoController extends Controller
@@ -35,6 +37,8 @@ class ProductoController extends Controller
     }
     public function buynow()
     {
+        $mailer= new PedidoCreated();
+        Mail::to("anytorrez14@hotmail.com")->send($mailer);
         
             $productos = Producto::join('categoria', 'producto.id_categoria', '=', 'categoria.id') 
                             ->select('producto.*', 'categoria.nombre as categoria' )
