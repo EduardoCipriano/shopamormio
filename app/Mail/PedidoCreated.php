@@ -13,16 +13,18 @@ class PedidoCreated extends Mailable
 
     public $pedido;
     public $productos;
+    public $customid;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($pedido )
+    public function __construct($pedido)
     {
         $this->pedido= $pedido;
         $this->productos =$pedido->shopping_cart->products()->get();
+        $this->customid= $pedido->shoppingCartID();
         
     }
 

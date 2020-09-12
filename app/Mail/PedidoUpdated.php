@@ -12,6 +12,7 @@ class PedidoUpdated extends Mailable
     use Queueable, SerializesModels;
 
     public $pedido;
+    public $customid;
 
     /**
      * Create a new message instance.
@@ -20,7 +21,8 @@ class PedidoUpdated extends Mailable
      */
     public function __construct($pedido)
     {
-        $this->pedido = $pedido; 
+        $this->pedido = $pedido;
+        $this->customid= $pedido->shoppingCartID(); 
     }
 
     /**

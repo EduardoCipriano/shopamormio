@@ -22,10 +22,7 @@ class Pedido extends Model
                           "total",
                           "fecha"];
 
-    public function shoppingCartID()
-    {
-        return $this->shopping_cart->customid;
-    }
+    
 
     public function namedepa()
     {
@@ -39,7 +36,7 @@ class Pedido extends Model
 
     public function sendUpdateMail()
     {
-        Mail::to("anitatorrez1924@gmail.com")->send(new PedidoUpdated($this));
+        Mail::to($this->correo)->send(new PedidoUpdated($this));
     }
 
     public function reMail(){
@@ -47,13 +44,18 @@ class Pedido extends Model
     }
 
     public function sendMail(){
-        Mail::to("anitatorrez1924@gmail.com")->send(new PedidoCreated($this));
+        Mail::to($this->correo)->send(new PedidoCreated($this));
     }
     
 
     public function shopping_cart()
     {
         return Pedido::belongsTo('App\ShoppingCart');
+    }
+    
+    public function shoppingCartID()
+    {
+        return $this->shopping_cart->customid;
     }
 
     public static function  totalMonth()

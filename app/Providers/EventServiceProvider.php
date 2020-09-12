@@ -41,10 +41,10 @@ class EventServiceProvider extends ServiceProvider
             }            
         });
 
-        Pedido::created(function($pedido){
+        /*Pedido::created(function($pedido){
             
             $pedido->sendUpdateMail();
                        
-        });
+        });*/
     }
 }
