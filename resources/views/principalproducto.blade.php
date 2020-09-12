@@ -111,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    	document.getElementById("nombre").innerHTML = nombre;
 		document.getElementById("nomb").innerHTML = nombre;
 		document.getElementById("categoria").innerHTML = categoria;
-		document.getElementById("precio").innerHTML = precio;
+		document.getElementById("precio").innerHTML = 'Q. '+precio;
 		document.getElementById("descripcion").innerHTML = descripcion;
 		document.getElementById("codigo").innerHTML = codigo;
     document.getElementById("cant").innerHTML='<input id="cantidad" value="1" name="cantidad" type="number"  class="form-control" style="font-size: 11px; letter-spacing: 1px;text-transform: uppercase;color: #000;border: none;padding: 10px 17px;background: #fff;"/>';

@@ -29,8 +29,8 @@
                     <td>{{ $i}}</td>
                     <td>{{$p->nombre}}</td>
                     <td>{{$p->pivot->cantidad}}</td>
-                    <td>Q. {{$p->pivot->precio}}</td>
-                    <td>Q. {{$p->pivot->precio*$p->pivot->cantidad}}</td>
+                    <td>Q. {{bcdiv($p->pivot->precio, '1', 2)}}</td>
+                    <td>Q. {{bcdiv($p->pivot->precio*$p->pivot->cantidad, '1', 2)}}</td>
                     <td>
                         <form method="POST" action="{{ url("eliminar/{$p->id}") }}">
                             @csrf
@@ -44,7 +44,7 @@
                 @endforeach
                 <tr>
                     <td colspan="4">Total</td>
-                    <td style="color:red; font-size: 15px; ">Q. {{$total}}</td>
+                    <td style="color:red; font-size: 15px; ">Q. {{bcdiv($total, '1', 2)}}</td>
                 </tr>
             </tbody>
         </table>

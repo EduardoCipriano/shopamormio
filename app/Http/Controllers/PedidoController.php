@@ -57,13 +57,10 @@ class PedidoController extends Controller
         ]);
 
         $shopping_cart->approve();
-
-        $municipio= $pedido->municipio->nombre;
-        $departamento= $pedido->departamento->nombre;
-
+        $pedido->sendMail();      
                         
 
-        return view ("shopping_carts.completed", ["shopping_cart"=>$shopping_cart,"pedido"=>$pedido, "departamento"=>$departamento, "municipio"=>$municipio]);
+        return view ("shopping_carts.completed", ["shopping_cart"=>$shopping_cart,"pedido"=>$pedido]);
     }
 
    

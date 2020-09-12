@@ -6,6 +6,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use App\Pedido;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,21 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
+       /* Pedido::created(function($pedido){
+            $pedido->sendMail();
+        });*/
+
+        Pedido::updated(function($pedido){
+            if($pedido->status=='enviado' && $pedido->guia!=null)
+            {
+                $pedido->sendUpdateMail();
+            }            
+        });
+
+        Pedido::created(function($pedido){
+            
+            $pedido->sendUpdateMail();
+                       
+        });
     }
 }

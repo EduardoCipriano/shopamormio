@@ -26,10 +26,10 @@ class InShoppingCartsController extends Controller
             //Add unique field combo to match here
             //For example, perhaps you only want one entry per user:
             'id_producto'   => $request->id_producto,
+            'shopping_cart_id' => $shopping_cart->id
         ],[
             'cantidad'  => $request->get('cantidad'),
-            'precio'    =>  $request->get('pre'),
-            'shopping_cart_id' => $shopping_cart->id
+            'precio'    =>  $request->get('pre')
         ]);
 
         if($response)

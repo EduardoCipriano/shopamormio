@@ -29,7 +29,7 @@
                 </tr>
                 <tr>
                     <th scope="row">Direccion</th>
-                    <td>{{$pedido->direccion}}, {{$municipio}}, {{$departamento}}</td>
+                    <td>{{$pedido->direccion}}, {{$pedido->municipio->nombre}}, {{$pedido->departamento->nombre}}</td>
                 </tr>
                 <tr>
                     <th class="text-center" scope="row" colspan="4">

@@ -25,6 +25,10 @@
 </head>
 
 <body>
+    
+        <p>Sí debes cambiar algún dato comunicate a: <a href="mailto:consientemeamormio@gmail.com" target="_blank" style="color: black;">consientemeamormio@gmail.com</a> o a: <a href="https://api.whatsapp.com/send?phone=50254342422" target="_blank" style="color: black;">+(502) 54342422</a></p>
+
+    </td>
     <div class="es-wrapper-color">
         <!--[if gte mso 9]>
 			<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
@@ -52,8 +56,8 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td class="esd-block-text es-infoblock" align="left">
-                                                                                        <p>Gracias por preferirnos</p>
-                                                                                    </td>
+                                                                                        <p>Actualización de tu pedido</p>
+                                                                                    </td>                                                                                    
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>
@@ -117,7 +121,7 @@
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td class="esd-block-text es-p10l" align="center">
-                                                                                        <p style="color: #242424;">Hola {{$pedido->cliente}}, hemos recibido el pedido #{{$pedido->id}} y estamos trabajando en él ahora. Te enviaremos una actualización por correo electrónico cuando lo enviemos.</p>
+                                                                                        <p style="color: #242424;">Hola {{$pedido->cliente}}, hemos actualizado el pedido #{{$pedido->id}} y adjuntamos la información.</p>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -126,87 +130,6 @@
                                                                                         
                                                                                 </tr>
                                                                                 <br>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="esd-structure es-p15t es-p10b es-p10r es-p10l" style="background-color: #f8f8f8;" esd-general-paddings-checked="false" bgcolor="#f8f8f8" align="left">
-                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="esd-container-frame" width="578" valign="top" align="center">
-                                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text" align="center">
-                                                                                        <h2 style="color: #191919;">Artículos ordenados</h2>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="esd-structure es-p25t es-p5b es-p20r es-p20l" esd-general-paddings-checked="false" style="background-color: #f8f8f8;" bgcolor="#f8f8f8" align="left">
-                                                        
-                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="esd-container-frame" width="270" align="left">
-                                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                                            <thead>
-                                                                                <tr>
-                                                                                    <th><p><span style="font-size:16px;"><strong style="line-height: 150%;">Producto </strong></span></p> </th>
-                                                                                    <th><p><span style="font-size:16px;"><strong style="line-height: 150%;">Precio </strong></span></p> </th>
-                                                                                    <th><p><span style="font-size:16px;"><strong style="line-height: 150%;">Cantidad </strong></span></p> </th>
-                                                                                    <th><p><span style="font-size:16px;"><strong style="line-height: 150%;">Subtotal </strong></span></p> </th>
-                                                                                </tr>
-                                                                            </thead>
-                                                                            <tbody>
-                                                                                <?php $total = 0 ?>
-                                                                                
-                                                                                @foreach ($productos as $p) 
-                                                                                <?php $subtotal = 0 ?>  
-                                                                                <?php $subtotal=$p->pivot->precio*$p->pivot->cantidad ?>                                                                                                                                                          
-                                                                                <tr>
-                                                                                    <th><p><span style="font-size:16px;"><strong style="line-height: 150%;">{{$p->nombre}}</strong></span></p></th>
-                                                                                    <th><p>Q. {{bcdiv($p->pivot->precio, '1', 2)}}</p></th>
-                                                                                    <th><p>{{$p->pivot->cantidad}}</p></th>
-                                                                                    <th><p>Q. {{bcdiv($subtotal, '1', 2)}}</p> </th>
-                                                                                </tr> 
-                                                                                <?php $total=$total + ($p->pivot->precio*$p->pivot->cantidad) ?>
-                                                                                @endforeach                                                                                
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                        <!--[if mso]></td></tr></table><![endif]-->
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="esd-structure es-p10t es-p10b es-p10r es-p10l" style="background-color: #ffffff;" esd-general-paddings-checked="false" bgcolor="#ffffff" align="left">
-                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="esd-container-frame" width="578" valign="top" align="center">
-                                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td align="center" class="esd-block-text es-p15">
-                                                                                        <p style="font-size: 20px;"><strong style="line-height: 150%;">Total: Q. {{bcdiv($total, '1', 2)}}</strong> </p>
-                                                                                    </td>
-                                                                                </tr>
                                                                             </tbody>
                                                                         </table>
                                                                     </td>
@@ -225,7 +148,7 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td class="esd-block-text" align="center">
-                                                                                        <h2 style="color: #efefef;">Información de pedido y envío</h2>
+                                                                                        <h2 style="color: #efefef;">Información del envío de tu pedido</h2>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
@@ -237,49 +160,26 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="esd-structure es-p10t es-p20r es-p20l" esd-general-paddings-checked="false" style="background-color: #eeeeee;" bgcolor="#eeeeee" align="left">
-                                                        <!--[if mso]><table width="558" cellpadding="0" cellspacing="0"><tr><td width="268" valign="top"><![endif]-->
-                                                        <table class="es-left" cellspacing="0" cellpadding="0" align="left">
+                                                    <td class="esd-structure es-p10t es-p20r es-p20l" esd-general-paddings-checked="false" style="background-color: #eeeeee;" bgcolor="#eeeeee" align="center">
+                                                       
+                                                        <table class="es-center" cellspacing="0" cellpadding="0" align="center">
                                                             <tbody>
                                                                 <tr>
-                                                                    <td class="es-m-p20b esd-container-frame" width="268" align="left">
+                                                                    <td class="esd-container-frame" width="270" align="center">
                                                                         <table width="100%" cellspacing="0" cellpadding="0">
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td class="esd-block-text es-p10t es-p10b" align="left">
-                                                                                        <h3 style="color: #242424;">Detalles del pedido</h3>
+                                                                                    <td class="esd-block-text es-p10t es-p10b" align="center">
+                                                                                        <h3 style="color: #242424;">Datos del envío</h3>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="esd-block-text" align="left">
-                                                                                        <p style="line-height: 200%;"><strong>Pedido №:</strong>{{$pedido->id}}</p>
-                                                                                        <p style="line-height: 200%;"><strong>Método de pago:</strong> {{$pedido->metodo_pago }}</p>
-                                                                                        <p style="line-height: 200%;"><strong>Fecha del pedido:</strong> {{$pedido->fecha}}</p>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                        <!--[if mso]></td><td width="20"></td><td width="270" valign="top"><![endif]-->
-                                                        <table class="es-right" cellspacing="0" cellpadding="0" align="right">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="esd-container-frame" width="270" align="left">
-                                                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text es-p10t es-p10b" align="left">
-                                                                                        <h3 style="color: #242424;">Datos de envío</h3>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td class="esd-block-text" align="left">
-                                                                                        <p>{{$pedido->cliente}}<strong></strong></p>
-                                                                                        <p>{{$pedido->direccion}}</p>
-                                                                                        <p>{{$pedido->municipio->nombre}}, {{$pedido->departamento->nombre}}<br></p>
+                                                                                    <td  align="center">
+                                                                                        <p style="line-height: 200%;"><strong>Pedido №: </strong>{{$pedido->id}}</p>
+                                                                                        <p style="line-height: 200%;"><strong>Método de pago: </strong> {{$pedido->metodo_pago }}</p>
+                                                                                        <p style="line-height: 200%;"> <strong>Destinatario: </strong>{{$pedido->cliente}}</p>
+                                                                                        <p style="line-height: 200%;"><strong>Dirección de envío: </strong>{{$pedido->direccion}} {{$pedido->municipio->nombre}}, {{$pedido->departamento->nombre}}</p>
+                                                                                        <p style="line-height: 200%;"><strong>Número de guía: </strong> {{$pedido->guia}}</p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
