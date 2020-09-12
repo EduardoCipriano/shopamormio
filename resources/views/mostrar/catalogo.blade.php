@@ -39,6 +39,7 @@
 <div class="buy-now">
 	<div class="container">
 		<div class="heading-setion-w3ls">
+			
 			<h3 class="title-w3layouts">
 				<i class="fa fa-heart" aria-hidden="true"></i>
 				Selecciona tu artículo favorito

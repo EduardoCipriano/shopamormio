@@ -1,14 +1,23 @@
 @extends('principalproducto')
 @section('contenido')
+
 <br>
 <br>
 <br>
 <br>
 <div class="container ">
+    @if(Session::has('message'))
+				<div class="alert {{ Session::get('alert-class', 'alert-info') }} " role="alert">
+				<strong>{{ Session::get('message') }}</strong>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+			@endif
     @if( $productsCount>0)
     <h1  class="text-center" style="font-size: 75px;">Tu pedido</h1>
 
-    <div class="bs-docs-example col-md-12 panel panel-footer  ">
+    <div class="bs-docs-example col-md-12 panel panel-footer" id="contenido">
         <table class="table table table-striped  ">
             <thead style="font-size: 15px;
             letter-spacing: 1px;text-transform: uppercase" >

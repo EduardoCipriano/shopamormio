@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Categoria;
+use DB;
 
 class PedidoController extends Controller
 {
@@ -37,30 +38,44 @@ class PedidoController extends Controller
     {
         $shopping_cart_id= \Session::get('shopping_cart_id');
         $shopping_cart = ShoppingCart::findOrCreateBySessionID($shopping_cart_id);
+        try
+        {
+            DB::beginTransaction();
+            if($shopping_cart->productsSize()>0)
+            {
+                $tiempo=Carbon::now('America/Guatemala');
 
-        $tiempo=Carbon::now('America/Guatemala');
+                \Session::remove("shopping_cart_id");
+    
+                $pedido=Pedido::create([            
+                    'shopping_cart_id' => $shopping_cart_id,
+                    'id_departamento' => $request->id_departamento,
+                    'id_municipio' => $request->id_municipio,
+                    'direccion' => $request->direccion,
+                    'cliente'   => $request->cliente,
+                    'correo'    =>$request->correo,
+                    'telefono' =>$request->telefono,
+                    'status' => 'creado',            
+                    'metodo_pago' => 'Contraentrega',
+                    'total' => $request->total,
+                    'fecha'  => $tiempo->toDateString()
+                ]);
+    
+                $shopping_cart->approve();
+                $pedido->sendMail();    
+                \Session::flash('message', 'Pedido realizado con éxito!!! Revisa tu correo para más información.'); 
+                \Session::flash('alert-class', 'alert-success'); 
+                DB::commit();
+            }     
 
-         \Session::remove("shopping_cart_id");
-
-        $pedido=Pedido::create([            
-            'shopping_cart_id' => $shopping_cart_id,
-            'id_departamento' => $request->id_departamento,
-            'id_municipio' => $request->id_municipio,
-            'direccion' => $request->direccion,
-            'cliente'   => $request->cliente,
-            'correo'    =>$request->correo,
-            'telefono' =>$request->telefono,
-            'status' => 'creado',            
-            'metodo_pago' => 'Contraentrega',
-            'total' => $request->total,
-            'fecha'  => $tiempo->toDateString()
-        ]);
-
-        $shopping_cart->approve();
-        $pedido->sendMail();      
-                        
-
-        return view ("shopping_carts.completed", ["shopping_cart"=>$shopping_cart,"pedido"=>$pedido]);
+        }
+        catch(Exception $exception)
+        {
+            DB::rollBack();
+            \Session::flash('message', 'Pedido no realizado, por favor intenta de nuevo'); 
+            \Session::flash('alert-class', 'alert-warning'); 
+        }
+        return back();        
     }
 
    

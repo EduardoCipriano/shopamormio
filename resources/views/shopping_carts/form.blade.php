@@ -61,7 +61,7 @@
 
 <div class="modal-footer">
     <input  type="submit" name="submit" value="Confirmar pedido" class="btn btn-secondary" style="font-size: 11px;
-    letter-spacing: 1px;text-transform: uppercase;color: #fff;border: none;padding: 10px 17px;background: #000;" />									
+    letter-spacing: 1px;text-transform: uppercase;color: #fff;border: none;padding: 10px 17px;background: #000;" id="btsubmit" />									
     <button type="button" class="btn btn-secondary" data-dismiss="modal" style="    font-size: 11px;
     letter-spacing: 1px;text-transform: uppercase;	color: #fff;border: none;padding: 10px 17px;background:red ;">Cancelar</button>
 

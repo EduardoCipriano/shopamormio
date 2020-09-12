@@ -53,16 +53,23 @@
                                     class="set-guia"
                                     data-name="guia"></a>
                                 </td>
-                                <td>
-                                    <a href="#" 
-                                    data-type="select"
-                                    data-pk="{{$p->id}}"
-                                    data-url="{{url("/pedido/$p->id")}}"
-                                    data-title="Número de guía" 
-                                    data-value="{{$p->status}}"
-                                    class="select-status"
-                                    data-name="status"></a>
-                                </td>
+                                @if ($p->status=='cancelado' || $p->status=='cancelado')
+                                    <td>
+                                        {{$p->status}}
+                                    </td>                                    
+                                @else
+                                    <td>
+                                        <a href="#" 
+                                        data-type="select"
+                                        data-pk="{{$p->id}}"
+                                        data-url="{{url("/pedido/$p->id")}}"
+                                        data-title="Número de guía" 
+                                        data-value="{{$p->status}}"
+                                        class="select-status"
+                                        data-name="status"></a>
+                                    </td> 
+                                    
+                                @endif                                
                                 <td>{{$p->total}}</td>
                                 <td>{{$p->fecha}}</td>
                                 <td>{{$p->metodo_pago}}</td>

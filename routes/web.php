@@ -33,6 +33,8 @@ Route::group(['middleware'=>['guest']],function(){
     Route::resource('in_shopping_carts', 'InShoppingCartsController',[
         'only'=>['store','destroy']
     ]);
+
+    
         
     Route::get('/buynow', 'ProductoController@buynow')->name('buynow');
     Route::get('/carrito', 'ShoppingCartsController@index');

@@ -34,8 +34,8 @@
                 </tr>
                 <tr>
                     <td class="text-center" scope="row" colspan="4">
-                        <a href="{{url('/compras/'.$shopping_cart->customid)}}" onclick="event.preventDefault(); document.getElementById('compras-form').submit();">Link permanente de tu compra</a> 
-                        <form id="compras-form" action="{{url('/compras/'.$shopping_cart->customid)}}" method="GET" style="display: none;">
+                        <a href="{{url('/compras/'. $pedido->shoppingCartID())}}" onclick="event.preventDefault(); document.getElementById('compras-form').submit();">Link permanente de tu compra</a> 
+                        <form id="compras-form" action="{{url('/compras/'. $pedido->shoppingCartID())}}" method="POST" style="display: none;">
                         {{csrf_field()}}
                         </form>
                     </td>
@@ -45,6 +45,8 @@
         </table>
     </div>       
  </div>
+ <script>
+ </script>
 
 
 

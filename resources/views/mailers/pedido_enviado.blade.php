@@ -26,7 +26,6 @@
 
 <body>
     
-        <p>Sí debes cambiar algún dato comunicate a: <a href="mailto:consientemeamormio@gmail.com" target="_blank" style="color: black;">consientemeamormio@gmail.com</a> o a: <a href="https://api.whatsapp.com/send?phone=50254342422" target="_blank" style="color: black;">+(502) 54342422</a></p>
 
     </td>
     <div class="es-wrapper-color">
@@ -121,13 +120,8 @@
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td class="esd-block-text es-p10l" align="center">
-                                                                                        <p style="color: #242424;">Hola {{$pedido->cliente}}, hemos actualizado el pedido #{{$pedido->id}} y adjuntamos la información.</p>
+                                                                                        <p style="color: #242424;">Hola {{$pedido->cliente}}, hemos actualizado el pedido #{{$pedido->id}}.</p>
                                                                                     </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td class="esd-block-button es-p15t es-p15b es-p10r es-p10l" align="center">
-                                                                                        <span class="es-button-border" style="border-radius: 40px; background: #191919 none repeat scroll 0% 0%; border-style: solid; border-color: #2cb543; border-width: 0px;"><a href="{{url('/compras/'.$customid)}}" class="es-button" target="_blank" style="border-radius: 20px; font-family: lucida sans unicode,lucida grande,sans-serif; font-weight: normal; font-size: 18px; border-width: 10px 35px; background: #191919 none repeat scroll 0% 0%; border-color: #191919; color: #ffffff;">Ver más información de tu pedido</a></span></td>
-                                                                                        
                                                                                 </tr>
                                                                                 <br>
                                                                             </tbody>
@@ -160,26 +154,18 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="esd-structure es-p10t es-p20r es-p20l" esd-general-paddings-checked="false" style="background-color: #eeeeee;" bgcolor="#eeeeee" align="center">
-                                                       
-                                                        <table class="es-center" cellspacing="0" cellpadding="0" align="center">
+                                                    <td class="esd-structure es-p15t es-p10b es-p10r es-p10l" style="background-color: black;" esd-general-paddings-checked="false" bgcolor="#6a0b08" align="left">
+                                                        <table width="100%" cellspacing="0" cellpadding="0">
                                                             <tbody>
                                                                 <tr>
-                                                                    <td class="esd-container-frame" width="270" align="center">
+                                                                    <td class="esd-container-frame" width="578" valign="top" align="center">
                                                                         <table width="100%" cellspacing="0" cellpadding="0">
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td class="esd-block-text es-p10t es-p10b" align="center">
-                                                                                        <h3 style="color: #242424;">Datos del envío</h3>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td  align="center">
-                                                                                        <p style="line-height: 200%;"><strong>Pedido №: </strong>{{$pedido->id}}</p>
-                                                                                        <p style="line-height: 200%;"><strong>Método de pago: </strong> {{$pedido->metodo_pago}}</p>
-                                                                                        <p style="line-height: 200%;"> <strong>Destinatario: </strong>{{$pedido->cliente}}</p>
-                                                                                        <p style="line-height: 200%;"><strong>Dirección de envío: </strong>{{$pedido->direccion}} {{$pedido->municipio->nombre}}, {{$pedido->departamento->nombre}}</p>
-                                                                                        <p style="line-height: 200%;"><strong>Número de guía: </strong> {{$pedido->guia}}</p>
+                                                                                    <td class="esd-block-text" align="center">
+                                                                                        <h2 style="color: #efefef;">Tu pedido ha sido entregado</h2>
+                                                                                        <h2 style="color: #efefef;">Esperamos que lo disfrutes</h2>
+                                                                                        <h2 style="color: #efefef;">Gracias por tu preferencia</h2>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
@@ -188,7 +174,6 @@
                                                                 </tr>
                                                             </tbody>
                                                         </table>
-                                                        <!--[if mso]></td></tr></table><![endif]-->
                                                     </td>
                                                 </tr>
                                             </tbody>

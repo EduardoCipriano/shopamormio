@@ -25,11 +25,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- banner -->
 	
-
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+style="display: none;" aria-hidden="true">
+  <div class="modal-dialog modal-primary modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="nombre">¡Aviso imporante!</h4>
+      </div>
+      <div class="modal-body" width="100px" height="100px">
+        Somos tienda virtual para adultos en donde encontrarás juguetes y accesorios sexuales.
+        Continua únicamente tu visita a nuestra página sí eres mayor de edad
+      </div>
+      <div class="modal-footer">
+        <input  type="button"  value="Soy mayor de edad, continuar"  class="btn btn-secondary" style="font-size: 11px;
+        letter-spacing: 1px;text-transform: uppercase;color: #fff;border: none;padding: 10px 17px;background: #000;" data-dismiss="modal"/>									
+        <a href="https://www.google.com/" type="button" class="btn btn-secondary"  style="    font-size: 11px;
+        letter-spacing: 1px;text-transform: uppercase;	color: #fff;border: none;padding: 10px 17px;background:red ;">Soy menor de edad, salir</a>	
+      </div>
+    </div>
+  </div>
+</div>
     
 <!-- //banner -->
 
-	@include('mostrar.navbar')	
+  @include('mostrar.navbar')	
+
+
 	
     <div class="banner_top" id="home">
       <div data-vide-bg ="video/gift-packs">
@@ -114,6 +135,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" src="{{('js/jquery-2.1.4.min.js')}}"></script>
 <!-- //js -->
 <script src="{{('js/responsiveslides.min.js')}}"></script>
+<script>
+  $( document ).ready(function() {
+    $('#myModal').modal('toggle')
+});
+</script>
         <script>
                     // You can also use "$(window).load(function() {"
                     $(function () {

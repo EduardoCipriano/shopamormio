@@ -24,7 +24,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body class="container-center">
 
 <!-- banner -->
-	
+<div class="text-center">
+  <a href="#myModal" class="trigger-btn" data-toggle="modal">Click to Open Login Modal</a>
+</div>   
+
+<!-- Modal HTML -->
+
 
     
 <!-- //banner -->
@@ -51,7 +56,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </footer>
 
-<!-- js -->
+
+<!-- js -->\
 
    
 <script type="text/javascript" src="{{URL::asset('js/jquery-2.1.4.min.js')}}"></script>
@@ -125,6 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script>	
   $(document).ready(function(){
+
   
     $('.ir-arriba').click(function(){
       $('body, html').animate({

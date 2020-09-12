@@ -41,10 +41,24 @@ class EventServiceProvider extends ServiceProvider
             }            
         });
 
-        /*Pedido::created(function($pedido){
+        Pedido::updated(function($pedido){
+            if($pedido->status=='cancelado')
+            {
+                $pedido->sendCanceladoMail();
+            }            
+        });
+
+        Pedido::updated(function($pedido){
+            if($pedido->status=='entregado')
+            {
+                $pedido->sendEntregadoMail();
+            }            
+        });
+
+        Pedido::created(function($pedido){
             
-            $pedido->sendUpdateMail();
+            $pedido->reMail();
                        
-        });*/
+        });
     }
 }

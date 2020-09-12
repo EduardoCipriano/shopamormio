@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\PedidoCreated;
 use App\Mail\PedidoUpdated;
+use App\Mail\PedidoNuevo;
+use App\Mail\PedidoEntregado;
+use App\Mail\PedidoCancelado;
 
 class Pedido extends Model
 {
@@ -20,6 +23,7 @@ class Pedido extends Model
                           "status",
                           "guia",
                           "total",
+                          "metodo_pago",
                           "fecha"];
 
     
@@ -39,8 +43,18 @@ class Pedido extends Model
         Mail::to($this->correo)->send(new PedidoUpdated($this));
     }
 
+    public function sendEntregadoMail()
+    {
+        Mail::to($this->correo)->send(new PedidoEntregado($this));
+    }
+
+    public function sendCanceladoMail()
+    {
+        Mail::to($this->correo)->send(new PedidoCancelado($this));
+    }
+
     public function reMail(){
-        Mail::to("anitatorrez1924@gmail.com")->send(new PedidoCreated($this));
+        Mail::to("anitatorrez1924@gmail.com")->send(new PedidoNuevo($this));
     }
 
     public function sendMail(){

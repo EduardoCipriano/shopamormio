@@ -167,8 +167,8 @@
                                                                                 <tr>
                                                                                     <th><p><span style="font-size:16px;"><strong style="line-height: 150%;">Producto </strong></span></p> </th>
                                                                                     <th><p><span style="font-size:16px;"><strong style="line-height: 150%;">Precio </strong></span></p> </th>
-                                                                                    <th><p><span style="font-size:16px;"><strong style="line-height: 150%;">Cantidad </strong></span></p> </th>
-                                                                                    <th><p><span style="font-size:16px;"><strong style="line-height: 150%;">Subtotal </strong></span></p> </th>
+                                                                                    <th><p><span style="font-size:16px;"><strong style="line-height: 150%;">Can. </strong></span></p> </th>
+                                                                                    <th><p><span style="font-size:16px;"><strong style="line-height: 150%;">Subt. </strong></span></p> </th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
@@ -253,7 +253,7 @@
                                                                                 <tr>
                                                                                     <td class="esd-block-text" align="left">
                                                                                         <p style="line-height: 200%;"><strong>Pedido №:</strong>{{$pedido->id}}</p>
-                                                                                        <p style="line-height: 200%;"><strong>Método de pago:</strong> {{$pedido->metodo_pago }}</p>
+                                                                                        <p style="line-height: 200%;"><strong>Método de pago:</strong> {{$pedido->metodo_pago}}</p>
                                                                                         <p style="line-height: 200%;"><strong>Fecha del pedido:</strong> {{$pedido->fecha}}</p>
                                                                                     </td>
                                                                                 </tr>
