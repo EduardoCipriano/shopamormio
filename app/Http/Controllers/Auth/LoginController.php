@@ -8,10 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function __contruct() 
-    {
-        $this->middleware('auth');
-    }
 
     public function showLoginForm(){
         return view('auth.login');
@@ -42,8 +38,7 @@ class LoginController extends Controller
        // return redirect('/login');
         Auth::logout();
         $request->session()->invalidate();
-        \Session::flash('success',"logout");
-        return redirect()->route('login');
+        return redirect('/');
     }
 
 
