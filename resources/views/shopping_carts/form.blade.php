@@ -1,7 +1,7 @@
 <div class="form-group row">
     <label class="col-md-3 form-control-label" for="des">Nombre</label>
     <div class="col-md-9">
-            <input type="numeric" class="form-control" placeholder="Ingresa tu nombre" id="cliente" name="cliente" required required pattern="[a-zA-Z ]{3,240}" title="Letras. Tamaño máximo: 240" >
+            <input type="numeric" class="form-control" placeholder="Ingresa tu nombre" id="cliente" name="cliente"  required pattern="[a-zA-Z ]{3,240}" title="Letras. Tamaño máximo: 240" >
     </div>
 </div>
 
@@ -60,10 +60,11 @@
 
 
 <div class="modal-footer">
-    <input  type="submit" name="submit" value="Confirmar pedido" class="btn btn-secondary" style="font-size: 11px;
-    letter-spacing: 1px;text-transform: uppercase;color: #fff;border: none;padding: 10px 17px;background: #000;" id="btsubmit" />									
+    <input  type="submit" name="submit" value="Confirmar pedido" class="btn btn-secondary submit-once"  style="font-size: 11px;
+    letter-spacing: 1px;text-transform: uppercase;color: #fff;border: none;padding: 10px 17px;background: #000;" />									
     <button type="button" class="btn btn-secondary" data-dismiss="modal" style="    font-size: 11px;
     letter-spacing: 1px;text-transform: uppercase;	color: #fff;border: none;padding: 10px 17px;background:red ;">Cancelar</button>
 
-    
+
 </div>
+

@@ -93,7 +93,7 @@
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td class="esd-block-text es-p10l" align="center">
-                                                                                        <p style="color: #242424;">Se recibio el {{$pedido->fecha}}, entra al panel de pedidos para cambiar estado y/o agregar numero de guía</p>
+                                                                                        <p style="color: #242424;">Se recibio el {{$pedido->fecha}}, entra al panel de pedidos para cambiar estado y/o agregar número de guía</p>
                                                                                     </td>
                                                                                 </tr>                                                                                
                                                                                 <br>
@@ -171,7 +171,7 @@
                                                                             <tbody>                                                                                                                                                                                                                                      
                                                                                 <tr>
                                                                                     <th><p>{{$pedido->telefono}}</p></th>
-                                                                                    <p style="color: black;"><a href="mailto:{{$pedido->correo}}" target="_blank" style="color: black;">consientemeamormio@gmail.com</a></p>
+                                                                                    <p style="color: black;"><a href="mailto:{{$pedido->correo}}" target="_blank" style="color: black;">{{$pedido->correo}}</a></p>
                                                                                 </tr>                                                                                                                                                             
                                                                             </tbody>
                                                                         </table>

@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="https://www.facebook.com/amormioshopgt" class="wthree_facebook" target="_blank"> <i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="https://www.instagram.com/amormio.gt" class="wthree_dribbble" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                         <li><a href="https://api.whatsapp.com/send?phone=50254342422" class="wthree_behance" target="_blank"> <i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
-                        <p>© 2020 Todos los derechos reservados | Creado por <a href="">Camaleón</a></p>
+                        <p>© 2020 Todos los derechos reservados | Creado por <a href="mailto:edsoncipriano810@gmail.com">Camaleón</a></p>
                     </ul>
                                
     
@@ -174,8 +174,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //Nice scroll -->
 <!-- for bootstrap working -->
 <script type="text/javascript" src="{{URL::asset('js/bootstrap-3.1.1.min.js')}}"></script>
-<!-- //for bootstrap working -->
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v8.0" nonce="6NIVgELP"></script>
+
+  <script type="text/javascript">
+  $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+  </script>
+  
+
 </body>
 </html>

@@ -55,10 +55,13 @@ class EventServiceProvider extends ServiceProvider
             }            
         });
 
-        Pedido::created(function($pedido){
-            
-            $pedido->reMail();
-                       
-        });
+        /*Pedido::created(function($pedido){
+            if($pedido->status=='entregado')
+            {
+                $pedido->sendMail(); 
+                $pedido->reMail();
+            }            
+        });*/
+
     }
 }

@@ -20,7 +20,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos = Pedido::latest()->paginate(10);
+        $pedidos = Pedido::latest()->paginate(15);
         $totalMonth= Pedido::totalMonth();
         $totalMounthCount= Pedido::totalMonthCount();
         return view ('pedido.index', ['pedidos'=>$pedidos, 
@@ -62,7 +62,8 @@ class PedidoController extends Controller
                 ]);
     
                 $shopping_cart->approve();
-                $pedido->sendMail();    
+                $pedido->sendMail(); 
+                $pedido->reMail();   
                 \Session::flash('message', 'Pedido realizado con éxito!!! Revisa tu correo para más información.'); 
                 \Session::flash('alert-class', 'alert-success'); 
                 DB::commit();
@@ -75,7 +76,7 @@ class PedidoController extends Controller
             \Session::flash('message', 'Pedido no realizado, por favor intenta de nuevo'); 
             \Session::flash('alert-class', 'alert-warning'); 
         }
-        return back();        
+        return redirect()->action('ProductoController@buynow');        
     }
 
    

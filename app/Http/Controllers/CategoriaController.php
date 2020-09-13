@@ -20,7 +20,7 @@ class CategoriaController extends Controller
             $consulta = trim($request->get('buscar'));
             $categorias = Categoria::where('nombre', 'LIKE', '%'.$consulta.'%')
                             ->orderBy('nombre')
-                            ->paginate(2);
+                            ->paginate(15);
                             //return $categorias;
 
                            return view('categoria.index', ["categorias"=>$categorias, "buscar"=>$consulta]);

@@ -2,9 +2,14 @@
  @section('contenido')
  <!-- Contenido Principal -->
  <main class="main">
+    <script>
+        if(performance.navigation.type == 2){
+            location.reload(true);
+         }
+        </script>
     <!-- Breadcrumb -->
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item active"><a href="/">Sistema de Pedidos AmormioShop</a></li>
+    <ol class="breadcrumb bg-danger">
+        <li class="breadcrumb-item active"  ><a style="color: black;" href="/"> <h5>Sistema de Pedidos AmormioShop</h5> </a></li>
     </ol>
     <div class="container-fluid">
         <!-- Ejemplo de tabla Listado -->
@@ -12,7 +17,7 @@
             <div class="card-header">
                <h2>Listado de productos</h2><br/>
                 <button class="btn btn-danger btn-lg" type="button" data-toggle="modal" data-target="#agregarproducto">
-                    <i class="fa fa-plus fa-1x"></i>&nbsp;&nbsp;Agregar Producto
+                    <i class="fa fa-plus fa-1x"></i>&nbsp;&nbsp;Agregar producto
                 </button>
             </div>
             <div class="card-body">
@@ -31,15 +36,15 @@
                     <thead class="bg-dark text-white" >
                         <tr >
                            
-                            <th>Codigo</th>
+                            <th>Código</th>
                             <th>Nombre</th>
-                            <th>Categoria</th>
+                            <th>Categoría</th>
                             <th>Precio</th>
-                            <th>Descripcion</th>
+                            <th>Descripción</th>
                             <th>Imagen</th>
                             <th>Estado</th>
                             <th>Editar</th>
-                            <th>Cambiar Estado</th>
+                            <th>Cambiar estado</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -109,7 +114,7 @@
     <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Agregar Producto</h4>
+                <h4 class="modal-title">Agregar producto</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
@@ -135,7 +140,7 @@
     <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Editar Producto</h4>
+                <h4 class="modal-title">Editar producto</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>

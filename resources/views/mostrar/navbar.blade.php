@@ -7,7 +7,7 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="home-icon"><a href="{{url('/')}}"><img src="{{URL::asset('img/logo.png')}}" style=" width:25px; height:19px" alt="logo"></a></li>
+				<li class="home-icon"><a href="{{url('http://amormioshop.com/')}}"><img src="{{URL::asset('img/logo.png')}}" style=" width:25px; height:19px" alt="logo"></a></li>
 				
 			
 				
@@ -33,10 +33,12 @@
 					{{csrf_field()}}
 					</form>
 				</li>
+				
+				@yield('ext')
 				<li class="nav-cart-w3ls">	
 							
 					<a class="nav-link" href="{{url('/carrito')}}" onclick="event.preventDefault(); document.getElementById('carrito-form').submit();">
-						<form id="carrito-form" action="{{url('/carrito')}}" method="GET" style="display: none;">
+						<form id="carrito-form" action="{{url('/carrito')}}" method="get" style="display: none;">
 							{{csrf_field()}} 
 						</form>
 						<i class="fa fa-cart-arrow-down fa-1x" aria-hidden="true"></i>
@@ -45,6 +47,7 @@
 						</span>
 					</a>												 
 				</li>
+				
 			</ul>	
 			<div class="clearfix"> </div>
 		</div>	

@@ -1,5 +1,3 @@
-
-
 <div class="sidebar">
     <nav class="sidebar-nav">
         <ul class="nav">
@@ -33,11 +31,8 @@
                 </form>
             </li>
 
+           
             
-            
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-user"></i> Usuarios</a>
-            </li>
                 
             
         </ul>

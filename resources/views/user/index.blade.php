@@ -2,29 +2,29 @@
  @section('contenido')
  <!-- Contenido Principal -->
  <main class="main">
+    <!-- Breadcrumb -->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="/">Sistema de Pedidos AmormioShop</a></li>
+    </ol>
     <script>
         if(performance.navigation.type == 2){
             location.reload(true);
          }
         </script>
-    <!-- Breadcrumb -->
-    <ol class="breadcrumb bg-danger">
-        <li class="breadcrumb-item active"  ><a style="color: black;" href="/"> <h5>Sistema de Pedidos AmormioShop</h5> </a></li>
-    </ol>
     <div class="container-fluid">
         <!-- Ejemplo de tabla Listado -->
         <div class="card">
             <div class="card-header">
-               <h2>Listado de Categorías</h2><br/>
+               <h2>Listado de Usuarios</h2><br/>
                 <button class="btn btn-danger btn-lg" type="button" data-toggle="modal" data-target="#agregarcategoria">
-                    <i class="fa fa-plus fa-1x"></i>&nbsp;&nbsp;Agregar Categoría
+                    <i class="fa fa-plus fa-1x"></i>&nbsp;&nbsp;Agregar Usuario
                 </button>
             </div>
             <div class="card-body">
                 <div class="form-group row">
                     <div class="col-md-6">
                         {{$buscar=''}}
-                        {{ Form::open(array('url'=>'categoria', 'method'=>'GET','autocomplete'=>'off','role'=>'search'))}}
+                        {{ Form::open(array('url'=>'user', 'method'=>'GET','autocomplete'=>'off','role'=>'search'))}}
                         <div class="input-group">
                             <input type="search" class="form-control" name="buscar" placeholder="Buscar" value="{{$buscar}}">
                             <button type="submit" class="btn btn-danger"><i class="fa fa-search"></i> Buscar</button>
@@ -36,23 +36,24 @@
                     <thead class="bg-dark text-white" >
                         <tr >
                            
-                            <th>Categoría</th>
-                            <th>Descripción</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
                             <th>Estado</th>
+                            <th>Rol</th>
                             <th>Editar</th>
-                            <th>Cambiar estado</th>
+                            <th>Cambiar Estado</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($categorias as $c)
+                        @foreach($usuarios as $us)
                         <tr>
                             
-                            <td>{{ $c->nombre }}</td>
-                            <td>{{ $c->descripcion }}</td>
+                            <td>{{ $us->nombre }}</td>
+                            <td>{{ $us->correo }}</td>
 
 
                             <td> 
-                                    @if($c->condicion=="1")
+                                    @if($us->condicion=="1")
                                         <button type="button" class="btn btn-success btn-sm">
                                     
                                           <i class="fa fa-check fa-1x"></i> 
@@ -65,20 +66,20 @@
                                     @endif
                                        
                             </td>
-
+                            <td>{{ $us->rol }}</td>
                             <td>
-                                <button type="button" class="btn btn-secondary btn-md" data-id_categoria="{{$c->id}}" data-nombre="{{$c->nombre}}" data-descripcion="{{$c->descripcion}}" data-toggle="modal" data-target="#abrirmodalEditar">
+                                <button type="button" class="btn btn-secondary btn-md" data-id_usuario="{{$us->id}}" data-nombre="{{$us->nombre}}" data-correo="{{$us->correo}}" data-password="{{$us->password}}" data-toggle="modal" data-target="#editarUsuario">
 
                                   <i class="fa fa-edit fa-1x"></i> Editar
                                 </button> &nbsp;
                             </td>
                             <td>
-                            @if($c->condicion)
-                                <button type="button" class="btn btn-danger btn-sm" data-id_categoria="{{$c->id}}" data-toggle="modal" data-target="#cambiarEstado">
+                            @if($us->condicion)
+                                <button type="button" class="btn btn-danger btn-sm" data-id_usuario="{{$us->id}}" data-toggle="modal" data-target="#cambiarEstadoUsuario">
                                     <i class="fa fa-times fa-1x"></i>
                                 </button>
                              @else
-                                <button type="button" class="btn btn-success btn-sm" data-id_categoria="{{$c->id}}" data-toggle="modal" data-target="#cambiarEstado">
+                                <button type="button" class="btn btn-success btn-sm" data-id_usuario="{{$us->id}}" data-toggle="modal" data-target="#cambiarEstadoUsuario">
                                     <i class="fa fa-lock fa-1x"></i> 
                                 </button>
                             @endif
@@ -87,7 +88,7 @@
                     @endforeach   
                     </tbody>
                 </table>
-                {{$categorias->render()}}
+                {{$usuarios->render()}}
             </div>
         </div>
         <!-- Fin ejemplo de tabla Listado -->
@@ -99,16 +100,16 @@
     <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Agregar categoría</h4>
+                <h4 class="modal-title">Agregar Usuario</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
             </div>
            
             <div class="modal-body">
-                <form action="{{route('categoria.store')}}" method="post"  class="form-horizontal">
+                <form action="{{route('user.store')}}" method="post"  class="form-horizontal">
                 {{ csrf_field() }} 
-                    @include('categoria.form')
+                    @include('user.form')
                     
                 </form>
             </div>
@@ -121,22 +122,22 @@
 <!--Fin del modal-->
 
 <!--Inicio del modal modificar/-->
-<div class="modal fade" id="abrirmodalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+<div class="modal fade" id="editarUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Editar categoria</h4>
+                <h4 class="modal-title">Editar Usuario</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
             </div>
            
             <div class="modal-body">
-                <form action="{{route('categoria.update','test')}}" method="post"  class="form-horizontal">
+                <form action="{{route('user.update','test')}}" method="post"  class="form-horizontal">
                     {{method_field('patch')}}<!-- proteger en la modificacion de registro -->
                     {{ csrf_field() }} 
-                    <input type="hidden" id="id_categoria" name="id_categoria" value="">
-                    @include('categoria.form')
+                    <input type="hidden" id="id_usuario" name="id_usuario" value="">
+                    @include('user.form')
                     
                 </form>
             </div>
@@ -149,7 +150,7 @@
 <!--Fin del modal-->
 
 <!--Inicio del cambiar estado/-->
-<div class="modal fade" id="cambiarEstado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+<div class="modal fade" id="cambiarEstadoUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -160,10 +161,10 @@
             </div>
            
             <div class="modal-body">
-                <form action="{{route('categoria.destroy','test')}}" method="post"  class="form-horizontal">
+                <form action="{{route('user.destroy','test')}}" method="post"  class="form-horizontal">
                     {{method_field('delete')}}<!-- proteger en la modificacion de registro -->
                     {{ csrf_field() }} 
-                    <input type="hidden" id="id_categoria" name="id_categoria" value="">
+                    <input type="hidden" id="id_usuario" name="id_usuario" value="">
                     <!--Inicio del cambiar estado/-->
                     <p>Esta seguro de cambiar el estado</p>
                     <div class="modal-footer">

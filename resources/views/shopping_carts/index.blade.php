@@ -6,14 +6,11 @@
 <br>
 <br>
 <div class="container ">
-    @if(Session::has('message'))
-				<div class="alert {{ Session::get('alert-class', 'alert-info') }} " role="alert">
-				<strong>{{ Session::get('message') }}</strong>
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				</div>
-			@endif
+  <script>
+if(performance.navigation.type == 2){
+    location.reload(true);
+ }
+</script>
     @if( $productsCount>0)
     <h1  class="text-center" style="font-size: 75px;">Tu pedido</h1>
 

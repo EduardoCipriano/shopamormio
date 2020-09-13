@@ -74,6 +74,7 @@ class Pedido extends Model
 
     public static function  totalMonth()
     {
+        //return Pedido::monthly()->where('status', '!=', 'cancelado')->sum("total");
         return Pedido::monthly()->sum("total");
     }
 

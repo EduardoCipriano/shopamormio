@@ -1,16 +1,21 @@
 @extends('principal')
  @section('contenido')
  <!-- Contenido Principal -->
- <main class="container-fluid main">
+ <main class="main">
+    <script>
+        if(performance.navigation.type == 2){
+            location.reload(true);
+         }
+        </script>
     <!-- Breadcrumb -->
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item active"><a href="/">Sistema de Pedidos AmormioShop</a></li>
+    <ol class="breadcrumb bg-danger">
+        <li class="breadcrumb-item active"  ><a style="color: black;" href="/"> <h5>Sistema de Pedidos AmormioShop</h5> </a></li>
     </ol>
     <div class="container-fluid">
         <!-- Ejemplo de tabla Listado -->
         <div class="card">
             <div class="card-header">
-               <h2>Estadisticas</h2>                
+               <h2>Estadísticas</h2>                
             </div>
             <div class="card-body row top-space">
                 <div class="col-xs-4 col-md-3 col-lg-6 sale-data" style="height: 80px; padding: 1em; text-align: center; border-right: solid 5px black;">
@@ -53,7 +58,7 @@
                                     class="set-guia"
                                     data-name="guia"></a>
                                 </td>
-                                @if ($p->status=='cancelado' || $p->status=='cancelado')
+                                @if ($p->status=='entregado' || $p->status=='cancelado')
                                     <td>
                                         {{$p->status}}
                                     </td>                                    
@@ -70,7 +75,7 @@
                                     </td> 
                                     
                                 @endif                                
-                                <td>{{$p->total}}</td>
+                                <td>Q. {{$p->total}}</td>
                                 <td>{{$p->fecha}}</td>
                                 <td>{{$p->metodo_pago}}</td>
                                

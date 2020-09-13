@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-
+    <script>
+        if(performance.navigation.type == 2){
+            location.reload(true);
+         }
+        </script>
 <head> 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +34,7 @@
         </button>
         <ul class="nav navbar-nav d-md-down-none">
             <li class="nav-item px-3">
-                <a class="nav-link" href="#">Administrador</a>
+                <a class="nav-link" href="#">Administración</a>
             </li>
            
         </ul>
@@ -38,7 +42,7 @@
         <ul class="nav navbar-nav ml-auto">
             @guest
                 <li class="nav-item">
-                    <a class="nav-link " href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="nav-link " href="{{ route('logint') }}">{{ __('Login') }}</a>
                 </li>
                 @if (Route::has('register'))
                     <li class="nav-item">
@@ -48,7 +52,7 @@
             @else
                 <li class="nav-item dropdown ">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
+                        {{ Auth::user()->nombre }}
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
@@ -70,14 +74,24 @@
 
     <div class="app-body">
 
-        @include('plantilla.sidebar')
+        @if(Auth::check())
+        @if (Auth::user()->idrol == 1)
+            @include('plantilla.sidebarroot')
+        @elseif (Auth::user()->idrol == 2)
+            @include('plantilla.sidebaradministrador')
+        @elseif (Auth::user()->idrol == 3)
+            @include('plantilla.sidebarvendedor')
+        @else
 
+        @endif
+
+        @endif
         @yield('contenido')
     </div>   
 
     <footer class="app-footer">
-        <span><a href="http://www.webtraining-it.com/">webtraining-it.com</a> &copy; 2020</span>
-        <span class="ml-auto">Desarrollado por <a href="http://www.webtraining-it.com/">webtraining-it.com</a></span>
+        <span><a style="color: rgb(117, 14, 14);" href="mailto:edsoncipriano810@gmail.com" target="_blank">Camaleón</a> &copy; 2020</span>
+        <span class="ml-auto">Desarrollado por <a style="color: rgb(117, 14, 14);" href="mailto:edsoncipriano810@gmail.com">Camaleón</a></span>
     </footer>
 
     <!-- Bootstrap and necessary plugins -->
@@ -102,7 +116,7 @@
                     { value: "creado", text: "Creado"},
                     { value: "enviado", text: "Enviado"},
                     { value: "entregado", text: "Entregado"},
-                    { value: "cancelado", text: "Cancelado"}
+                    { value: "cancelado", text: "Anulado"}
                 ]
             });
         });

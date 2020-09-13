@@ -33,10 +33,9 @@ Route::group(['middleware'=>['guest']],function(){
     Route::resource('in_shopping_carts', 'InShoppingCartsController',[
         'only'=>['store','destroy']
     ]);
-
-    
         
     Route::get('/buynow', 'ProductoController@buynow')->name('buynow');
+    Route::get('/xcat', 'ProductoController@xcat');
     Route::get('/carrito', 'ShoppingCartsController@index');
     Route::delete('eliminar/{id}', 'InShoppingCartsController@destroy')
     ->name('eliminar.destroy');
@@ -48,19 +47,49 @@ Route::group(['middleware'=>['guest']],function(){
         'only' => ['show']
     ]);
     Route::get('selectMunicipio/{id}','MunicipioController@selectMunicipio');
+
+    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+    Route::post('logint', 'Auth\LoginController@login')->name('logint');
 });
 
 Route::group(['middleware'=>['auth']],function(){
 
-    Route::resource('categoria', 'CategoriaController');        
-    Route::resource('producto', 'ProductoController');
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::resource('pedido', 'PedidoController',[
-        'only' => ['index', 'update']
-    ]);
+    Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+   
+    Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-      
+    Route::group(['middleware' => ['Vendedor']], function () {
+        
+        Route::resource('pedido', 'PedidoController',[
+            'only' => ['index', 'update']
+        ]);
+    
+    });
+
+    Route::group(['middleware' => ['Administrador']], function () {
+         
+        
+        Route::resource('categoria', 'CategoriaController');        
+        Route::resource('producto', 'ProductoController');
+        
+        Route::resource('pedido', 'PedidoController',[
+            'only' => ['index', 'update']
+        ]);
+    
+    });
+
+    Route::group(['middleware' => ['Root']], function () {
+
+        Route::resource('categoria', 'CategoriaController');        
+        Route::resource('producto', 'ProductoController');
+        
+        Route::resource('pedido', 'PedidoController',[
+            'only' => ['index', 'update']
+        ]);
+
+        Route::resource('rol', 'RolController');
+        Route::resource('user', 'UserController');
+   });
+    
 
 });
-
-Auth::routes();

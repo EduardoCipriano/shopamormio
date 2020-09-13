@@ -1,23 +1,27 @@
 
     <div class="form-group row">
-        <label class="col-md-3 form-control-label" for="des">Codigo</label>
+        <label class="col-md-3 form-control-label" for="des">Código</label>
         <div class="col-md-9">
-                <input type="numeric" class="form-control" placeholder="Ingrese codigo" id="codigo" name="codigo" >
+                <input type="numeric" class="form-control" placeholder="Ingrese código" id="codigo" name="codigo"
+                pattern="[A-Za-z0-9]{1,240}"
+                title="Letras y números. Tamaño máximo: 240" required>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-md-3 form-control-label" for="des">Nombre</label>
         <div class="col-md-9">
-                <input type="text" class="form-control" placeholder="Ingrese nombre" id="nombre" name="nombre">
+                <input type="text" class="form-control" placeholder="Ingrese nombre" id="nombre" name="nombre"
+                pattern="[A-Za-z0-9]{3,240}"
+                title="Letras y números. Tamaño máximo: 240" required>
         </div>
     </div>
 
     <div class="form-group row">
-        <label class="col-md-3 form-control-label"  for="titulo">Categoria</label>
+        <label class="col-md-3 form-control-label"  for="titulo">Categoría</label>
         <div class="col-md-9">
-            <select class="form-control" name="id_categoria" id="id_categoria">								
-            <option value="" disabled>Seleccione</option>
+            <select class="form-control" name="id_categoria" id="id_categoria" required>								
+                <option value="" selected>Seleccione</option>
                 @foreach($categorias as $cat)
                     <option value="{{$cat->id}}">{{$cat->nombre}}</option>    
                 @endforeach 
@@ -27,13 +31,13 @@
     <div class="form-group row">
         <label class="col-md-3 form-control-label" for="des">Precio</label>
         <div class="col-md-9">
-                <input type="text" class="form-control" placeholder="Ingrese precio" id="precio" name="precio">
+                <input type="number" step="0.01" min="0.01" class="form-control" placeholder="Ingrese precio" id="precio" name="precio" required>
         </div>
     </div>
     <div class="form-group row">
         <label class="col-md-3 form-control-label" for="des">Descripción</label>
         <div class="col-md-9">
-                <input type="text" class="form-control" placeholder="Ingrese descripcion" id="descripcion" name="descripcion">
+                <input type="text" class="form-control" placeholder="Ingrese descripción" id="descripcion" name="descripcion">
         </div>
     </div>
 

@@ -57,7 +57,7 @@ style="display: none;" aria-hidden="true">
         <div class="center-container">
           <div class="w3_agile_header">
                 <div class="w3_agileits_logo">
-                <h1><a href="{{url('/')}}">Amor Mio Shop<span>Detalles que enamoran</span></a></h1>
+                <h1><a href="{{url('http://amormioshop.com/')}}">Amor Mio Shop<span>Detalles que enamoran</span></a></h1>
                   </div>
                   <div class="w3_menu">
                   <div class="agileits_w3layouts_banner_info">
@@ -122,7 +122,7 @@ style="display: none;" aria-hidden="true">
                         <li><a href="https://www.facebook.com/amormioshopgt" target="_blank" class="wthree_facebook"> <i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="https://www.instagram.com/amormio.gt" target="_blank" class="wthree_dribbble"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                         <li><a href="https://api.whatsapp.com/send?phone=50254342422" class="wthree_behance" target="_blank"> <i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
-                        <p>© 2020 Todos los derechos reservados | Creado por <a href="">Camaleón</a></p>
+                        <p>© 2020 Todos los derechos reservados | Creado por <a href="mailto:edsoncipriano810@gmail.com">Camaleón</a></p>
                     </ul>
                                
     

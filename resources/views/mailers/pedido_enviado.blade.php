@@ -93,7 +93,7 @@
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td class="esd-block-image" align="center" style="font-size: 0px;"><a target="_blank" href="https://viewstripo.email/"><img class="adapt-img" src="https://demo.stripocdn.email/content/guids/6a3726f8-6394-47e6-a633-29f1a2a1664e/images/76021599803638146.png" alt width="105" style="display: block;"></a></td>
+                                                                                    <td class="esd-block-image" align="center" style="font-size: 0px;"><a target="_blank" href="http://amormioshop.com/"><img class="adapt-img" src="https://demo.stripocdn.email/content/guids/6a3726f8-6394-47e6-a633-29f1a2a1664e/images/76021599803638146.png" alt width="105" style="display: block;"></a></td>
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>
@@ -222,7 +222,7 @@
                                                                                 </tr>                                                                                
                                                                                 <tr>
                                                                                     <td class="esd-block-text" align="center" esd-links-color="#ffffff">
-                                                                                        <p style="color: #ffffff;">© 2020 Todos los derechos reservados | Creado por&nbsp;<a href="http://127.0.0.1:8000/contacto?_token=anuwiUeqEHKNLNfJTkou9ofeopin7YavkRrE73x7" style="color: #ffffff;">Camaleón</a></p>
+                                                                                        <p style="color: #ffffff;">© 2020 Todos los derechos reservados | Creado por&nbsp;<a href="mailto:edsoncipriano810@gmail.com" style="color: #ffffff;">Camaleón</a></p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
