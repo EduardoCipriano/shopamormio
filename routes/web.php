@@ -39,7 +39,7 @@ Route::group(['middleware'=>['guest']],function(){
     Route::get('/carrito', 'ShoppingCartsController@index');
     Route::delete('eliminar/{id}', 'InShoppingCartsController@destroy')
     ->name('eliminar.destroy');
-    Route::get('/', 'MainController@home'); 
+    Route::get('/', 'MainController@home')->name('/'); 
    /* Route::resource('pedido', 'PedidoController', [
         'only' => 'store'
     ]);*/
@@ -48,7 +48,7 @@ Route::group(['middleware'=>['guest']],function(){
     ]);
     Route::get('selectMunicipio/{id}','MunicipioController@selectMunicipio');
 
-    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');;
     Route::post('logint', 'Auth\LoginController@login')->name('logint');
 });
 
@@ -56,7 +56,7 @@ Route::group(['middleware'=>['auth']],function(){
 
     Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
    
-    Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+    Route::get('/home', 'HomeController@index')->name('home');
 
     Route::group(['middleware' => ['Vendedor']], function () {
         
