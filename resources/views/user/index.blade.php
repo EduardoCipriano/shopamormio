@@ -67,8 +67,8 @@
                                        
                             </td>
                             <td>{{ $us->rol }}</td>
-                            <td>
-                                <button type="button" class="btn btn-secondary btn-md" data-id_usuario="{{$us->id}}" data-nombre="{{$us->nombre}}" data-correo="{{$us->correo}}" data-password="{{$us->password}}" data-toggle="modal" data-target="#editarUsuario">
+                            <td> 
+                                <button type="button" class="btn btn-secondary btn-md" data-id_usuario="{{$us->id}}" data-id_rol="{{$us->idrol}}" data-nombre="{{$us->nombre}}" data-correo="{{$us->correo}}" data-password="{{$us->password}}" data-toggle="modal" data-target="#editarUsuario">
 
                                   <i class="fa fa-edit fa-1x"></i> Editar
                                 </button> &nbsp;

@@ -8,8 +8,8 @@ use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use App\Categoria;
-use DB;
+use App\Categoria;use Illuminate\Support\Facades\DB;
+Use Exception;
 
 class PedidoController extends Controller
 {

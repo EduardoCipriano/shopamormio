@@ -6,7 +6,8 @@ use App\Categoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Producto;
-use DB; 
+use Illuminate\Support\Facades\DB;
+Use Exception;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -71,34 +72,48 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         
-        $productos= new Producto();
-        $productos->codigo= $request->codigo;
-        $productos->id_categoria=$request->id_categoria;
-        $productos->nombre= $request->nombre;
-        $productos->descripcion=$request->descripcion;
-        $productos->precio= $request->precio;
-        $productos->condicion='1';
-        $hasFile = $request->hasFile('cover') && $request->cover->isValid();  //has File para ver si viene un archivo o no, y isValid devuelve verdadero cuando el archivo se pudo subir
-        //despues que el producto se haya guardado se va a mover
-        //el archivo de una carpeta temporal a una carpeta del proyecto
-        if($hasFile)
-        {
-            $extension = $request->cover->extension(); //extramos extension de la imagen
-            $productos->extension=$extension; //guardamos extension de la imagen en la tabla
-            //develve la extension del archivo
-        }
-        $productos->save();
-       
-
-        if($productos->save())//si se guardo el registro
-        {
-            if($hasFile) //si se recibio un archivo
+        try{
+            DB::beginTransaction();
+            $productos= new Producto();
+            $productos->codigo= $request->codigo;
+            $productos->id_categoria=$request->id_categoria;
+            $productos->nombre= $request->nombre;
+            $productos->descripcion=$request->descripcion;
+            $productos->precio= $request->precio;
+            $productos->condicion='1';
+            $hasFile = $request->hasFile('cover') && $request->cover->isValid();  //has File para ver si viene un archivo o no, y isValid devuelve verdadero cuando el archivo se pudo subir
+            //despues que el producto se haya guardado se va a mover
+            //el archivo de una carpeta temporal a una carpeta del proyecto
+            if($hasFile)
             {
-                $request->cover->storeAs('public/img', "$productos->id.$extension"); //images es la carpeta donde se va a guardar
-                ///store crea un nombre aleatorio, storeAs nosotros le asignamos un nombre
+                $extension = $request->cover->extension(); //extramos extension de la imagen
+                $productos->extension=$extension; //guardamos extension de la imagen en la tabla
+                //develve la extension del archivo
             }
+            $productos->save();
+           
+    
+            if($productos->save())//si se guardo el registro
+            {
+                if($hasFile) //si se recibio un archivo
+                {
+                    $request->cover->storeAs('public/img', "$productos->id.$extension"); //images es la carpeta donde se va a guardar
+                    ///store crea un nombre aleatorio, storeAs nosotros le asignamos un nombre
+                }
+            }
+
+            DB::commit();
+            return Redirect::to("producto");
+
+        }catch(Exception $exception){
+            DB::rollBack();
+            \Session::flash('message', 'Tu registro no se pudo guardar. Verfica que el código no exista'); 
+            \Session::flash('alert-class', 'alert-danger'); 
+            return redirect()->back();        
         }
-        return Redirect::to("producto");//redireccionar al index 
+        
+       
+        //redireccionar al index 
     }
 
     /**
@@ -124,9 +139,12 @@ class ProductoController extends Controller
             
         if($hasFile)
         {
-            $fileName = $productos->id.'.'.$productos->extension;
-            //Storage::delete('app/public/img/'.$fileName); esto no funciono  
-            unlink(storage_path('app/public/img/'.$fileName));         
+            if($productos->extension)
+            {
+                $fileName = $productos->id.'.'.$productos->extension;
+                unlink(storage_path('app/public/img/'.$fileName)); 
+            }
+                   
             $extension = $request->cover->extension(); //extramos extension de la imagen
             $productos->extension=$extension; //guardamos extension de la imagen en la tabla
             //develve la extension del archivo

@@ -26,7 +26,7 @@ class UserController extends Controller
             
             ->orderBy('users.id','desc')
             ->paginate(3);
-
+  
              //listar los roles en ventana modal/
             $roles=DB::table('roles')
             ->select('id','nombre','descripcion')

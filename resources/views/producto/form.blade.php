@@ -2,9 +2,7 @@
     <div class="form-group row">
         <label class="col-md-3 form-control-label" for="des">Código</label>
         <div class="col-md-9">
-                <input type="numeric" class="form-control" placeholder="Ingrese código" id="codigo" name="codigo"
-                pattern="[A-Za-z0-9]{1,240}"
-                title="Letras y números. Tamaño máximo: 240" required>
+                <input type="numeric" class="form-control" placeholder="Ingrese código" id="codigo" name="codigo" required>
         </div>
     </div>
 
@@ -12,8 +10,7 @@
         <label class="col-md-3 form-control-label" for="des">Nombre</label>
         <div class="col-md-9">
                 <input type="text" class="form-control" placeholder="Ingrese nombre" id="nombre" name="nombre"
-                pattern="[A-Za-z0-9]{3,240}"
-                title="Letras y números. Tamaño máximo: 240" required>
+                required>
         </div>
     </div>
 
