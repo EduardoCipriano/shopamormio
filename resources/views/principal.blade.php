@@ -224,6 +224,31 @@
 	})
 
     </script>
+    <script>
+              /*EDITAR categoria EN VENTANA MODAL*/
+        $('#editarUsuario').on('show.bs.modal', function (event) {
+        var botoneditar = $(event.relatedTarget) 
+        var nombre = botoneditar.data('nombre')
+        var correo = botoneditar.data('correo')
+        var id_rol = botoneditar.data('id_rol')
+        var id_usuario = botoneditar.data('id_usuario')
+        var modal = $(this)
+        modal.find('.modal-body #nombre').val(nombre);
+        modal.find('.modal-body #correo').val(correo);
+        modal.find('.modal-body #id_rol').val(id_rol);
+        modal.find('.modal-body #id_usuario').val(id_usuario);
+    })
+
+         /*INICIO ventana modal para cambiar estado de Categoria*/
+        
+         $('#cambiarEstadoUsuario').on('show.bs.modal', function (event) {
+        var botoncambiarestado = $(event.relatedTarget) 
+        var id_usuario = botoncambiarestado.data('id_usuario')
+        var modal = $(this)
+        
+        modal.find('.modal-body #id_usuario').val(id_usuario);
+        })
+    </script>
 
    
 </body>

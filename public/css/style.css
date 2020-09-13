@@ -1882,7 +1882,7 @@ select.form-control-lg:not([size]):not([multiple]),
 .form-control.is-valid,
 .was-validated .custom-select:valid,
 .custom-select.is-valid {
-    border-color: #4dbd74;
+    border-color: red;
 }
 
 .was-validated .form-control:valid:focus,
@@ -1905,7 +1905,7 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .was-validated .form-check-input:valid+.form-check-label,
 .form-check-input.is-valid+.form-check-label {
-    color: #4dbd74;
+    color: red;
 }
 
 .was-validated .custom-control-input:valid~.custom-control-indicator,
@@ -10915,14 +10915,14 @@ base-chart.chart {
 .sidebar .nav-link.active i,
 .sidebar .navbar .active.dropdown-toggle i,
 .navbar .sidebar .active.dropdown-toggle i {
-    color: #20a8d8;
+    color: red;
 }
 
 .sidebar .nav-link:hover,
 .sidebar .navbar .dropdown-toggle:hover,
 .navbar .sidebar .dropdown-toggle:hover {
     color: #fff;
-    background: #20a8d8;
+    background: red;
 }
 
 .sidebar .nav-link:hover i,

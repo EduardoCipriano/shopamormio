@@ -16,7 +16,7 @@
         <div class="card">
             <div class="card-header">
                <h2>Listado de Usuarios</h2><br/>
-                <button class="btn btn-danger btn-lg" type="button" data-toggle="modal" data-target="#agregarcategoria">
+                <button class="btn btn-danger btn-lg" type="button" data-toggle="modal" data-target="#AgregarUsuario">
                     <i class="fa fa-plus fa-1x"></i>&nbsp;&nbsp;Agregar Usuario
                 </button>
             </div>
@@ -96,7 +96,7 @@
 
 
    <!--Inicio del modal agregar/-->
-   <div class="modal fade" id="agregarcategoria" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+   <div class="modal fade" id="AgregarUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">

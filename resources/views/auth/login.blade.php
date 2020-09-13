@@ -8,7 +8,7 @@
           <form class="form-horizontal was-validated" method="POST" action="{{route('logint')}}">
           {{ csrf_field() }}
               <div class="card-body">
-              <h3 class="text-center bg-success">Pedidos AmorMioShop</h3>
+              <h3 class="text-center bg-danger">Pedidos AmorMioShop</h3>
              
               <div class="form-group mb-3{{$errors->has('correo' ? 'is-invalid' : '')}}">
                 <span class="input-group-addon"><i class="icon-user"></i></span>
@@ -22,7 +22,7 @@
               </div>
               <div class="row">
                 <div class="col-6">
-                  <button type="submit" class="btn btn-success px-4"><i class="fa fa-sign-in fa-2x"></i> Iniciar sesión</button>
+                  <button type="submit" class="btn btn-danger px-4"><i class="fa fa-sign-in fa-2x"></i> Iniciar sesión</button>
                 </div>
               </div>
             </div>

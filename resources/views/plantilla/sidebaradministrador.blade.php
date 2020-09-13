@@ -2,8 +2,15 @@
     <nav class="sidebar-nav">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link active" href="#"><i class="icon-speedometer"></i> Administrador</a>
+                <a class="nav-link active" href="/" ><i class="icon-speedometer"></i> Administrador</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/')}}" onclick="event.preventDefault(); document.getElementById('/-form').submit();"><i class="fa fa-list"></i>Inicio</a> 
+                <form id="/-form" action="{{url('/')}}" method="GET" style="display: none;">
+                {{csrf_field()}}
+                </form>
+            </li>
+            
             <li class="nav-title">
                 Menú
             </li>
