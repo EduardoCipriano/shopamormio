@@ -7,11 +7,24 @@
             location.reload(true);
          }
         </script>
+        <script type="text/javascript">
+            function actualizar(){location.reload(true);}
+          //Función para actualizar cada 4 segundos(4000 milisegundos)
+            setInterval("actualizar()",600000);
+          </script>
     <!-- Breadcrumb -->
     <ol class="breadcrumb bg-danger">
         <li class="breadcrumb-item active"  ><a style="color: black;" href="/"> <h5>Sistema de Pedidos AmormioShop</h5> </a></li>
     </ol>
     <div class="container-fluid">
+        @if(Session::has('message'))
+				<div class="alert {{ Session::get('alert-class', 'alert-info') }} " role="alert">
+					<strong>{{ Session::get('message') }}</strong>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			    @endif
         <!-- Ejemplo de tabla Listado -->
         <div class="card">
             <div class="card-header">
