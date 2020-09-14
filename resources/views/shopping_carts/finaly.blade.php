@@ -5,6 +5,14 @@
 
 
 <div class="container form-row text-center panel panel-footer ">
+    @if(Session::has('message'))
+				<div class="alert {{ Session::get('alert-class', 'alert-info') }} " role="alert">
+					<strong>{{ Session::get('message') }}</strong>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			    @endif
     <h1  class="text-center" style="font-size: 75px;">Tu pedido fue: <span>{{$pedido->status}}</span></h1>
     <br>
     <div class="table-responsive-sm">
